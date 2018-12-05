@@ -11,12 +11,10 @@
 |
 */
 
-
-
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@home')->name('home');
+Route::redirect('/home', '/');
 
 Route::get('/map', 'HomeController@map')->name('map');
 Route::get('/faq', 'HomeController@faq')->name('faq');
