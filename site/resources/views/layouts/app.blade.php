@@ -53,7 +53,7 @@
                             </li>
                         @else
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('music') }}">Music</a>
+                                <a class="nav-link" href="{{ route('music.index') }}">Music</a>
                             </li>
                             <li class="nav-item">
                                 @if (Route::has('register'))
@@ -85,7 +85,11 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+            <div class="container">
+                <div class="row justify-content-center">
+                    @yield('content')
+                </div>
+            </div>
         </main>
     </div>
 </body>

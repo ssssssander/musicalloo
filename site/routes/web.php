@@ -20,4 +20,6 @@ Route::get('/map', 'HomeController@map')->name('map');
 Route::get('/faq', 'HomeController@faq')->name('faq');
 Route::get('/contact', 'HomeController@contact')->name('contact');
 
-Route::get('/music', 'HomeController@music')->name('music');
+Route::middleware(['auth'])->prefix('admin')->group(function() {
+    Route::resource('music', 'MusicFileController');
+});
