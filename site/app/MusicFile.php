@@ -11,7 +11,9 @@ class MusicFile extends Model
 
     protected $dates = ['deleted_at'];
 
-    public function user() {
-        return $this->belongsTo('App\User');
+    protected $fillable = ['music_set_id', 'path'];
+
+    public function musicSet() {
+        return $this->belongsTo('App\MusicSet');
     }
 }

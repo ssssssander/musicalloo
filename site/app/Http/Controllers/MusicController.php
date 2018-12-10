@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use App\MusicSet;
+use App\MusicFile;
 
-class MusicFileController extends Controller
+class MusicController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +26,7 @@ class MusicFileController extends Controller
      */
     public function create()
     {
-        //
+        return view('music.create');
     }
 
     /**
@@ -34,7 +37,31 @@ class MusicFileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'music_set_name' => 'required|string|unique:music_sets|max:255',
+            'music_file' => 'required|mimetypes:audio/wav,audio/mpeg,audio/mp3|max:10000', // Max 10 MB
+        ]);
+
+        if ($request->file('music_file')->isValid()) {
+            $musicFilePath = $request->file('music_file')->store('music_files');
+        }
+        else {
+            return redirect()->back();
+        }
+
+        $musicSet = new MusicSet;
+        $musicSet->user_id = Auth::id();
+        $musicSet->name = $request->music_set_name;
+        $musicSet->save();
+
+        $musicFile = new MusicFile;
+        $musicFile->music_set_id = $musicSet->id;
+        $musicFile->path = $musicFilePath;
+        $musicFile->save();
+
+        $request->session()->flash('success', 'Success!');
+
+        return view('music.index');
     }
 
     /**

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMusicFilesTable extends Migration
+class CreateMusicSetsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateMusicFilesTable extends Migration
      */
     public function up()
     {
-        Schema::create('music_files', function (Blueprint $table) {
+        Schema::create('music_sets', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('music_set_id');
-            $table->string('path');
+            $table->unsignedInteger('user_id');
+            $table->string('name', 255);
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('music_set_id')->references('id')->on('music_sets')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -31,6 +31,6 @@ class CreateMusicFilesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('music_files');
+        Schema::dropIfExists('music_sets');
     }
 }
