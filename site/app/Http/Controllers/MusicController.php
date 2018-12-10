@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreMusicSet;
 use App\MusicSet;
 use App\MusicFile;
 use Auth;
@@ -37,13 +38,8 @@ class MusicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreMusicSet $request)
     {
-        $validatedData = $request->validate([
-            'music_set_name' => 'required|string|unique:music_sets,name|max:255',
-            'music_file' => 'required|mimetypes:audio/wav,audio/mpeg,audio/mp3|max:10000', // Max 10 MB
-        ]);
-
         if ($request->file('music_file')->isValid()) {
             $musicFilePath = $request->file('music_file')->store('music_files');
         }
@@ -61,7 +57,7 @@ class MusicController extends Controller
         $musicFile->path = $musicFilePath;
         $musicFile->save();
 
-        $request->session()->flash('success', 'Success!');
+        $request->session()->flash('success', 'Success! Created');
 
         return redirect()->route('music.index');
     }
@@ -88,7 +84,9 @@ class MusicController extends Controller
      */
     public function edit($id)
     {
-        //
+        $musicSet = MusicSet::findOrFail($id);
+
+        return view('music.edit', compact('musicSet'));
     }
 
     /**
@@ -98,9 +96,26 @@ class MusicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreMusicSet $request, $id)
     {
-        //
+        if ($request->file('music_file')->isValid()) {
+            $musicFilePath = $request->file('music_file')->store('music_files');
+        }
+        else {
+            return redirect()->back();
+        }
+
+        $musicSet = MusicSet::find($id);
+        $musicSet->name = $request->music_set_name;
+        $musicSet->save();
+
+        $musicFile = MusicFile::where('music_set_id', $musicSet->id)->first();
+        $musicFile->path = $musicFilePath;
+        $musicFile->save();
+
+        $request->session()->flash('success', 'Success! Updated');
+
+        return redirect()->route('music.index');
     }
 
     /**

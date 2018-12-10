@@ -11,6 +11,7 @@
                     <source src="{{ url('storage/' . $musicFile->path) }}" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
+                <a href="{{ route('music.edit', ['id' => $musicSet->id]) }}">Edit</a>
             </li>
         @empty
             Nuthin here
