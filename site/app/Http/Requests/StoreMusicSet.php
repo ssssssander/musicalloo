@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\MusicSet;
 
 class StoreMusicSet extends FormRequest
 {
@@ -13,9 +14,6 @@ class StoreMusicSet extends FormRequest
      */
     public function authorize()
     {
-        // $musicSet = MusicSet::find($this->route('music.show'));
-
-        // return $musicSet && $this->user()->can('update', $musicSet);
         return true;
     }
 

@@ -23,7 +23,3 @@ Route::get('/contact', 'HomeController@contact')->name('contact');
 Route::middleware(['auth'])->prefix('/admin')->group(function() {
     Route::resource('music', 'MusicController');
 });
-
-Route::fallback(function () {
-    return view('errors.404');
-});
