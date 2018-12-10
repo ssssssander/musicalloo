@@ -28,7 +28,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function musicSet() {
+    public function musicSets() {
         return $this->hasMany('App\MusicSet');
     }
 }

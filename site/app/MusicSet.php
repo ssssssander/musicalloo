@@ -17,7 +17,7 @@ class MusicSet extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function musicFile() {
+    public function musicFiles() {
         return $this->hasMany('App\MusicFile');
     }
 }
