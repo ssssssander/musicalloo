@@ -10,6 +10,7 @@
             <li>
                 <a href="{{ route('music.show', ['id' => $musicSet->id]) }}">{{ $musicSet->name }}</a>
                 <a href="{{ route('music.edit', ['id' => $musicSet->id]) }}">Edit</a>
+                @include('partials.delete_music_set')
             </li>
         @empty
             Nuthin here

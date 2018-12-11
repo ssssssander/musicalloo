@@ -13,4 +13,5 @@
         <input type="file" name="music_file">
         <input type="submit" value="Edit">
     </form>
+    @include('partials.delete_music_set')
 @endsection

@@ -15,7 +15,7 @@ class MusicController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $musicSets = Auth::user()->musicSets;
 
@@ -57,7 +57,7 @@ class MusicController extends Controller
         $musicFile->path = $musicFilePath;
         $musicFile->save();
 
-        $request->session()->flash('success', 'Success! Created');
+        $request->session()->flash('success', 'Successfully created!');
 
         return redirect()->route('music.index');
     }
@@ -68,7 +68,7 @@ class MusicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
         $musicSet = MusicSet::findOrFail($id);
         $musicFiles = $musicSet->musicFiles;
@@ -82,7 +82,7 @@ class MusicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
         $musicSet = MusicSet::findOrFail($id);
 
@@ -113,7 +113,7 @@ class MusicController extends Controller
         $musicFile->path = $musicFilePath;
         $musicFile->save();
 
-        $request->session()->flash('success', 'Success! Updated');
+        $request->session()->flash('success', 'Successfully updated!');
 
         return redirect()->route('music.index');
     }
@@ -124,8 +124,13 @@ class MusicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        $musicSet = MusicSet::find($id);
+        $musicSet->delete();
+
+        $request->session()->flash('success', 'Successfully deleted!');
+
+        return redirect()->route('music.index');
     }
 }

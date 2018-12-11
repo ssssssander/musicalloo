@@ -12,6 +12,7 @@
                     Your browser does not support the audio element.
                 </audio>
                 <a href="{{ route('music.edit', ['id' => $musicSet->id]) }}">Edit</a>
+                <a href="{{ route('music.destroy', ['id' => $musicSet->id]) }}">Delete</a>
             </li>
         @empty
             Nuthin here
