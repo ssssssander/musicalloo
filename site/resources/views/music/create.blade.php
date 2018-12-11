@@ -8,7 +8,9 @@
         @csrf
         <label for="music-set-name">Name</label>
         <input type="text" name="music_set_name" id="music-set-name" value="{{ old('music_set_name') }}">
-        <input type="file" name="music_file">
+        <label for="music_file[0]">Music file 1</label>
+        <input type="file" name="music_file[0]" id="music_file[0]">
         <input type="submit" value="Submit">
     </form>
+    <button id="add-file-button">+</button>
 @endsection

@@ -6,7 +6,6 @@
  */
 
 require('./bootstrap');
-require('./dropzone');
 
 window.Vue = require('vue');
 
@@ -32,3 +31,27 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 const app = new Vue({
     el: '#app'
 });
+
+let addFileButton = document.getElementById('add-file-button');
+let firstFileInput = document.getElementById('music_file[0]');
+let fileInputIndex = 0;
+
+addFileButton.addEventListener('click', addFileInput);
+
+function addFileInput(event) {
+    fileInputIndex++;
+    let musicFileID = 'music_file[' + fileInputIndex + ']';
+    let fileInputElem = document.createElement('input');
+    let fileInputLabelElem = document.createElement('input');
+    fileInputElem.setAttribute('type', 'file');
+    fileInputElem.setAttribute('name', musicFileID);
+    fileInputElem.setAttribute('id', musicFileID);
+    fileInputLabelElem.setAttribute('for', musicFileID);
+    fileInputLabelElem.textContent = 'Music file' + (fileInputIndex + 1);
+
+    document.body.appendChild(fileInputElem);
+}
+
+function insertAfter(newNode, referenceNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+}
