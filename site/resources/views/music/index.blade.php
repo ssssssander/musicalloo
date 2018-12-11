@@ -13,7 +13,7 @@
                 @include('partials.delete_music_set')
             </li>
         @empty
-            Nuthin here
+            Nothing here
         @endforelse
     </ul>
 @endsection

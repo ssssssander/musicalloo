@@ -15,7 +15,7 @@
                 <a href="{{ route('music.destroy', ['id' => $musicSet->id]) }}">Delete</a>
             </li>
         @empty
-            Nuthin here
+            Nothing here
         @endforelse
     </ul>
 @endsection

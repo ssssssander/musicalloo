@@ -9,6 +9,6 @@
         <label for="music-set-name">Name</label>
         <input type="text" name="music_set_name" id="music-set-name" value="{{ old('music_set_name') }}">
         <input type="file" name="music_file">
-        <input type="submit" value="Create">
+        <input type="submit" value="Submit">
     </form>
 @endsection
