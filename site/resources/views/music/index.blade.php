@@ -10,10 +10,15 @@
             <li>
                 <a href="{{ route('music.show', ['id' => $musicSet->id]) }}">{{ $musicSet->name }}</a>
                 <a href="{{ route('music.edit', ['id' => $musicSet->id]) }}">Edit</a>
-                @include('partials.delete_music_set')
+                @include('partials.delete_musicset_form')
             </li>
         @empty
             Nothing here
         @endforelse
     </ul>
+    <script>
+        if (sessionStorage.getItem('fileInputIndex')) {
+            sessionStorage.removeItem('fileInputIndex');
+        }
+    </script>
 @endsection

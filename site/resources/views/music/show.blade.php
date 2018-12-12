@@ -8,14 +8,14 @@
         @forelse ($musicFiles as $musicFile)
             <li>
                 <audio controls>
-                    <source src="{{ url('storage/' . $musicFile->path) }}" type="audio/mpeg">
+                    <source src="{{ url('storage/' . $musicFile->path) }}">
                     Your browser does not support the audio element.
                 </audio>
-                <a href="{{ route('music.edit', ['id' => $musicSet->id]) }}">Edit</a>
-                @include('partials.delete_music_set')
             </li>
         @empty
             Nothing here
         @endforelse
     </ul>
+    @include('partials.delete_musicset_form')
+    <a href="{{ route('music.edit', ['id' => $musicSet->id]) }}">Edit music set</a>
 @endsection

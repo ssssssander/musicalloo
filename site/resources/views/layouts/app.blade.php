@@ -86,5 +86,6 @@
         </nav>
         @yield('main')
     </div>
+    @yield('custom-scripts')
 </body>
 </html>
