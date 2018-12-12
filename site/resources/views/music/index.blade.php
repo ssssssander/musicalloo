@@ -16,6 +16,9 @@
             Nothing here
         @endforelse
     </ul>
+@endsection
+
+@section('custom-scripts')
     <script>
         if (sessionStorage.getItem('fileInputIndex')) {
             sessionStorage.removeItem('fileInputIndex');
