@@ -9,7 +9,6 @@
         @method('PATCH')
         <label for="musicset-name">Name</label>
         <input type="text" name="musicset_name" id="musicset-name" value="{{ old('musicset_name') ?? $musicSet->name }}">
-{{--         <input type="file" name="music_file"> --}}
         <input type="submit" value="Submit">
     </form>
     @include('partials.delete_musicset_form')

@@ -127,19 +127,8 @@ class MusicController extends Controller
             abort(403);
         }
 
-        // if ($request->file('music_file')->isValid()) {
-        //     $musicFilePath = $request->file('music_file')->store('music_files');
-        // }
-        // else {
-        //     return redirect()->back();
-        // }
-
         $musicSet->name = $request->musicset_name;
         $musicSet->save();
-
-        // $musicFile = MusicFile::where('music_set_id', $musicSet->id)->first();
-        // $musicFile->path = $musicFilePath;
-        // $musicFile->save();
 
         $request->session()->flash('success', 'Successfully updated!');
 
