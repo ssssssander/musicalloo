@@ -58,8 +58,6 @@
         let allFileInputElems = document.getElementsByClassName('extra-file');
         let allFileInputLabelElems = document.getElementsByClassName('extra-label');
         let allDeleteFileInputElem = document.querySelectorAll('input[id^="delete-file-input-button-"]');
-        console.log(allFileInputElems);
-        console.log(allDeleteFileInputElem);
 
         for (let i = 0; i < allFileInputElems.length; i++) {
             allFileInputElems[i].setAttribute('name', 'music_file[' + (i + 1) + ']');
