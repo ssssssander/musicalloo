@@ -7,10 +7,9 @@
     <form method="POST" action="{{ route('music.update', ['id' => $musicSet->id]) }}" accept-charset="UTF-8" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
-        <label for="music-set-name">Name</label>
-        <input type="text" name="music_set_name" id="music-set-name" value="{{ old('music_set_name') ?? $musicSet->name }}">
-        <input type="file" name="music_file">
+        <label for="musicset-name">Name</label>
+        <input type="text" name="musicset_name" id="musicset-name" value="{{ old('musicset_name') ?? $musicSet->name }}">
         <input type="submit" value="Submit">
     </form>
-    @include('partials.delete_music_set')
+    @include('partials.delete_musicset_form')
 @endsection

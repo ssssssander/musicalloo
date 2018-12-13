@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\MusicSetRequest;
+use App\Http\Requests\StoreMusicSet;
+use App\Http\Requests\UpdateMusicSet;
 use App\MusicSet;
 use App\MusicFile;
 use Auth;
@@ -40,31 +41,33 @@ class MusicController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Requests\MusicSetRequest  $request
+     * @param  \Illuminate\Http\Requests\StoreMusicSet  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(MusicSetRequest $request)
+    public function store(StoreMusicSet $request)
     {
         if (!Auth::user()->can('store', MusicSet::class)) {
             return abort(403);
         }
 
-        if ($request->file('music_file')->isValid()) {
-            $musicFilePath = $request->file('music_file')->store('music_files');
-        }
-        else {
-            return redirect()->back();
-        }
-
         $musicSet = new MusicSet;
         $musicSet->user_id = Auth::id();
-        $musicSet->name = $request->music_set_name;
+        $musicSet->name = $request->musicset_name;
         $musicSet->save();
 
-        $musicFile = new MusicFile;
-        $musicFile->music_set_id = $musicSet->id;
-        $musicFile->path = $musicFilePath;
-        $musicFile->save();
+        foreach ($request->file('music_file.*') as $file) {
+            if ($file->isValid()) {
+                $musicFilePath = $file->store('music_files');
+
+                $musicFile = new MusicFile;
+                $musicFile->music_set_id = $musicSet->id;
+                $musicFile->path = $musicFilePath;
+                $musicFile->save();
+            }
+            else {
+                return redirect()->back();
+            }
+        }
 
         $request->session()->flash('success', 'Successfully created!');
 
@@ -112,11 +115,11 @@ class MusicController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Requests\MusicSetRequest  $request
+     * @param  \Illuminate\Http\Requests\UpdateMusicSet  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(MusicSetRequest $request, $id)
+    public function update(UpdateMusicSet $request, $id)
     {
         $musicSet = MusicSet::findOrFail($id);
 
@@ -124,19 +127,8 @@ class MusicController extends Controller
             abort(403);
         }
 
-        if ($request->file('music_file')->isValid()) {
-            $musicFilePath = $request->file('music_file')->store('music_files');
-        }
-        else {
-            return redirect()->back();
-        }
-
-        $musicSet->name = $request->music_set_name;
+        $musicSet->name = $request->musicset_name;
         $musicSet->save();
-
-        $musicFile = MusicFile::where('music_set_id', $musicSet->id)->first(); // ->first() is temp
-        $musicFile->path = $musicFilePath;
-        $musicFile->save();
 
         $request->session()->flash('success', 'Successfully updated!');
 
