@@ -69,6 +69,9 @@
                                 <a class="nav-link" href="{{ route('music.index') }}">Music</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="{{ route('marker.index') }}">Markers</a>
+                            </li>
+                            <li class="nav-item">
                                 @if (Route::has('register'))
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 @endif
