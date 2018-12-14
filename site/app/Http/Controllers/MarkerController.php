@@ -38,7 +38,9 @@ class MarkerController extends Controller
 
     public function show(Request $request, $id)
     {
-        return view('/');
+    	$marker = Marker::findOrFail($id);
+
+        return view('marker.show', compact('marker'));
     }
 
 
@@ -52,19 +54,23 @@ class MarkerController extends Controller
 
     public function edit(Request $request, $id)
     {
-        return view('');
+    	$marker = Marker::findOrFail($id);
+
+        return view('marker.edit', compact('marker'));
     }
 
 
-    public function update()
+    public function update(MarkerRequest $request)
     {
-        return view('');
+        return view('marker.index');
     }
+
+
 
 
     public function destroy(Request $request, $id)
     {
-        return view('');
+        return view('/');
     }
 
 }
