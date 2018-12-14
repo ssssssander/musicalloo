@@ -8,7 +8,6 @@
 
 	    <div id="mapid"></div>
     </div>
-    <?php echo config('app.mapbox_token') ?>
 @endsection
 
 
@@ -26,10 +25,14 @@
 		}).addTo(mymap);
 
 
-		var KdGHoboken = L.marker([51.173339, 4.371204]).addTo(mymap);
+		<?php
+			foreach($markers as $marker)
+			{
+				echo 'var marker' . $marker->id . ' = L.marker([' . $marker->latitude . ', ' . $marker->longitude . ']).addTo(mymap);';
 
-		KdGHoboken.bindPopup("<b>KdG Hoboken</b><br>Een school");
-
+				echo 'marker' . $marker->id . '.bindPopup("<b>' . $marker->name . '</b><br>' . $marker->address . '");';
+			}
+		?>
 
 	</script>
 @endsection
