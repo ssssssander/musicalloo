@@ -78,7 +78,8 @@ body {
   line-height: 1.6;
   color: #212529;
   text-align: left;
-  background-color: #f8fafc;
+  /* background-color: #f8fafc; */
+  background-image: radial-gradient(circle, #eafdff, #dffbfe, #d4f8fe, #c9f6fe, #bdf3ff);
 }
 
 [tabindex="-1"]:focus {
@@ -9543,4 +9544,141 @@ a.text-dark:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+
+/* --- Lazlo --- */
+
+#app {
+    display: flex;
+}
+
+main h1 {
+    color: #396488;
+}
+
+/* Home */
+
+.toilet-wrapper {
+    position: fixed;
+    bottom: 0;
+    height: 300px;
+    right: 50px;
+}
+
+.toilet-image {
+    height: 300px;
+}
+
+.music-note1 {
+    position: absolute;
+    top: 50%;
+    left: 26%;
+    height: 50px;
+    animation: fly-up1 2s linear infinite;
+}
+
+@keyframes fly-up1 {
+    0% {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100px) translateY(-200px);
+        opacity: 0;
+    }
+}
+
+.music-note2 {
+    position: absolute;
+    top: 50%;
+    left: 26%;
+    height: 50px;
+    animation: fly-up2 2s 2.45s linear infinite;
+}
+
+@keyframes fly-up2 {
+    0% {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(40px) translateY(-150px);
+        opacity: 0;
+    }
+}
+
+.music-note3 {
+    position: absolute;
+    top: 50%;
+    left: 26%;
+    height: 50px;
+    animation: fly-up3 2s 1.66s linear infinite;
+}
+
+@keyframes fly-up3 {
+    0% {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-10px) translateY(-250px);
+        opacity: 0;
+    }
+}
+
+/* navbar */
+nav {
+    position: relative;
+    width: fit-content;
+    margin-top: 50px;
+    margin-left: 50px;
+    min-width: 101px;
+    height: 400px;
+}
+
+nav .nav-image {
+    height: 400px;
+}
+
+.nav_item {
+    position: absolute;
+    left: 11%;
+    width: 56px;
+    height: 56px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.nav_item:nth-child(2) {
+    top: 30%;
+}
+
+.nav_item:nth-child(3) {
+    top: 43.5%;
+}
+
+.nav_item:nth-child(4) {
+    top: 57%;
+}
+
+.nav_item:nth-child(5) {
+    top: 70.5%;
+}
+
+.nav_item:nth-child(6) {
+    top: 84.5%;
+}
+
+.nav_item:nth-child(2):hover img {
+    stroke: red !important;
+}
+
+.nav_item img {
+    width: 35px;
+    height: 35px;
+    justify-self: center;
+    align-self: center;
 }
