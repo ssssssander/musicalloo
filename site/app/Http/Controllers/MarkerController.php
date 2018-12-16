@@ -32,7 +32,7 @@ class MarkerController extends Controller
     	$marker->address = $request->address;
     	$marker->save();
 
-    	return view('marker.index');
+    	return redirect()->route('marker.index');
     }
 
 
