@@ -32,7 +32,9 @@ class MarkerController extends Controller
     	$marker->address = $request->address;
     	$marker->save();
 
-    	return view('marker.index');
+    	$request->session()->flash('success', 'Successfully created!');
+
+    	return redirect()->route('marker.index');
     }
 
 
@@ -44,14 +46,6 @@ class MarkerController extends Controller
     }
 
 
-
-
-
-
-
-
-
-
     public function edit(Request $request, $id)
     {
     	$marker = Marker::findOrFail($id);
@@ -60,9 +54,19 @@ class MarkerController extends Controller
     }
 
 
-    public function update(MarkerRequest $request)
+    public function update(MarkerRequest $request, $id)
     {
-        return view('marker.index');
+    	$marker = Marker::findOrFail($id);
+
+    	$marker->latitude = $request->latitude;
+    	$marker->longitude = $request->longitude;
+    	$marker->name = $request->name;
+    	$marker->address = $request->address;
+    	$marker->save();
+
+        $request->session()->flash('success', 'Successfully updated!');
+
+        return redirect()->route('marker.index');
     }
 
 
@@ -70,7 +74,13 @@ class MarkerController extends Controller
 
     public function destroy(Request $request, $id)
     {
-        return view('/');
+    	$marker = Marker::findOrFail($id);
+
+    	$marker->delete();
+
+    	$request->session()->flash('success', 'Successfully deleted!');
+
+    	return redirect()->route('marker.index');
     }
 
 }

@@ -7,6 +7,7 @@
 
     <form id="marker-form" method="POST" action="{{ route('marker.update', ['id' => $marker->id]) }}" accept-charset="UTF-8" enctype="multipart/form-data">
         @csrf
+        @method('PATCH')
 		<label for="latitude">Latitude</label>
 		<input type="text" name="latitude" value="{{ $marker->latitude }}">
 
@@ -21,4 +22,5 @@
 
         <input type="submit" value="Submit">
     </form>
+    @include('partials.delete_marker_form')
 @endsection

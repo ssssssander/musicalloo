@@ -12,7 +12,7 @@
             <li>
                 <a href="{{ route('marker.show', ['id' => $marker->id]) }}">{{ $marker->name }}</a>
                 <a href="{{ route('marker.edit', ['id' => $marker->id]) }}">Edit</a>
-                
+                @include('partials.delete_marker_form')
             </li>
         @empty
             Nothing here
