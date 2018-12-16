@@ -5,7 +5,8 @@
 @section('main')
     <main>
         <h1>Musicalloo</h1>
-        <div>I sit and shit on my toilet when I hear a funny sound. Another person comes in and sits on a toilet. The sound is getting richer. What is this feeling of joy? It must be Musicalloo. (Placeholder text)</div>
+        <span class="divider"></span>
+        <div class="content">I sit and shit on my toilet when I hear a funny sound. Another person comes in and sits on a toilet. The sound is getting richer. What is this feeling of joy? It must be Musicalloo. (Placeholder text)</div>
     </main>
 
     <div class="toilet-wrapper">

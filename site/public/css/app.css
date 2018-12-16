@@ -9557,8 +9557,32 @@ a.text-dark:focus {
     position: relative;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+}
+
 main h1 {
     color: #396488;
+    font-weight: 700;
+    margin-top: 100px;
+    margin-bottom: 0;
+    display: inline-block;
+}
+
+.divider {
+    width: 200px;
+    height: 2px;
+    border-radius: 5px;
+    background-color: #396488;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.content {
+    margin-top: 20px;
+    width: calc(100% - 400px);
 }
 
 /* Home */
