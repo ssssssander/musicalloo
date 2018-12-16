@@ -70,8 +70,6 @@ class MarkerController extends Controller
     }
 
 
-
-
     public function destroy(Request $request, $id)
     {
     	$marker = Marker::findOrFail($id);
