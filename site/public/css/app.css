@@ -9551,6 +9551,10 @@ a.text-dark:focus {
 
 #app {
     display: flex;
+    height: 100vh;
+    margin: 0 auto;
+    max-width: 1200px;
+    position: relative;
 }
 
 main h1 {
@@ -9560,10 +9564,10 @@ main h1 {
 /* Home */
 
 .toilet-wrapper {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     height: 300px;
-    right: 50px;
+    right: 55px;
 }
 
 .toilet-image {
