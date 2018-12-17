@@ -1,16 +1,32 @@
-#define AUDIO A3
-int a = 0;
+#define TRIG 12
+#define ECHO 13
+#define SPEAKER 3
+
+long duration;
+int distance;
 
 void setup() {
+  pinMode(TRIG, OUTPUT);
+  pinMode(ECHO, INPUT);
+  pinMode(SPEAKER, OUTPUT);
   Serial.begin(9600);
-  pinMode(AUDIO, OUTPUT);
-
 }
-
 void loop() {
-  tone(AUDIO, a, a);
-  Serial.println("Beep");
-  delay(a);
+  digitalWrite(TRIG, LOW); // Clear trig pin
+  delayMicroseconds(2);
+  digitalWrite(TRIG, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIG, LOW);
   
-  a++;
+  duration = pulseIn(ECHO, HIGH);
+  distance = (duration * 0.034) / 2;
+
+  if (distance <= 15) {
+    tone(SPEAKER, 200, 500);
+  }
+  
+  Serial.print(distance);
+  Serial.println(" cm");
+  
+  delay(500);
 }
