@@ -4,11 +4,56 @@
 
 // Variables
 @import 'variables';
+@import 'map';
+@import 'nav';
+@import 'toilet';
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// @import '~bootstrap/scss/bootstrap';
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+
+/* --- Main --- */
+
+* {
+	font-family: "Nunito", sans-serif;
+}
+
+body {
+  background-image: radial-gradient(circle, #eafdff, #dffbfe, #d4f8fe, #c9f6fe, #bdf3ff);
+}
+
+#app {
+    display: flex;
+    height: 100vh;
+    margin: 0 auto;
+    max-width: 1200px;
+    position: relative;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+}
+
+main h1 {
+    color: #396488;
+    font-weight: 700;
+    margin-top: 100px;
+    margin-bottom: 0;
+    display: inline-block;
+}
+
+.divider {
+    width: 200px;
+    height: 2px;
+    border-radius: 5px;
+    background-color: #396488;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.content {
+    margin-top: 20px;
+    width: calc(100% - 400px);
 }

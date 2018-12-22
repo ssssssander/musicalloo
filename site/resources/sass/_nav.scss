@@ -1,0 +1,56 @@
+/* Nav */
+
+nav {
+    position: relative;
+    width: fit-content;
+    margin-top: 50px;
+    margin-left: 50px;
+    min-width: 101px;
+    height: 400px;
+}
+
+nav .nav-image {
+    height: 400px;
+}
+
+.nav_item {
+    position: absolute;
+    left: 11%;
+    width: 56px;
+    height: 56px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.nav_item:nth-child(2) {
+    top: 30%;
+}
+
+.nav_item:nth-child(3) {
+    top: 43.5%;
+}
+
+.nav_item:nth-child(4) {
+    top: 57%;
+}
+
+.nav_item:nth-child(5) {
+    top: 70.5%;
+}
+
+.nav_item:nth-child(6) {
+    top: 84.5%;
+}
+
+.nav_item:nth-child(2):hover img {
+    stroke: red !important;
+}
+
+.nav_item img {
+    width: 35px;
+    height: 35px;
+    justify-self: center;
+    align-self: center;
+}
