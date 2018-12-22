@@ -12,14 +12,17 @@
 // @import '~bootstrap/scss/bootstrap';
 
 
+
 /* --- Main --- */
 
 * {
-	font-family: "Nunito", sans-serif;
+	font-family: $font_family;
 }
 
 body {
-  background-image: radial-gradient(circle, #eafdff, #dffbfe, #d4f8fe, #c9f6fe, #bdf3ff);
+	padding: 0;
+	margin: 0;
+	background-color: $bg;
 }
 
 #app {
@@ -31,29 +34,21 @@ body {
 }
 
 main {
-    display: flex;
-    flex-direction: column;
+    display: block;
     padding-left: 50px;
-}
 
-main h1 {
-    color: #396488;
-    font-weight: 700;
-    margin-top: 100px;
-    margin-bottom: 0;
-    display: inline-block;
-}
+    h1 {
+	    color: $primary;
+	    font-weight: 700;
+	    padding-bottom: 20px;
+	    margin-top: 100px;
+	    margin-bottom: 0;
+	    display: inline-block;
+	    border-bottom: 2px solid $primary;
+    }
 
-.divider {
-    width: 200px;
-    height: 2px;
-    border-radius: 5px;
-    background-color: #396488;
-    display: inline-block;
-    margin-top: 20px;
-}
-
-.content {
-    margin-top: 20px;
-    width: calc(100% - 400px);
+	.content {
+	    margin-top: 50px;
+	    width: calc(100% - 400px);
+	}
 }

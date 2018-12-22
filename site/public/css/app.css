@@ -11,7 +11,7 @@
   align-items: center;
 }
 
-/* Nav */
+/* Navigation Toilet Roll */
 
 nav {
   position: relative;
@@ -28,7 +28,7 @@ nav .nav-image {
   height: 400px;
 }
 
-.nav_item {
+nav .nav_item {
   position: absolute;
   left: 11%;
   width: 56px;
@@ -39,31 +39,31 @@ nav .nav-image {
   cursor: pointer;
 }
 
-.nav_item:nth-child(2) {
+nav .nav_item:nth-child(2) {
   top: 30%;
 }
 
-.nav_item:nth-child(3) {
+nav .nav_item:nth-child(3) {
   top: 43.5%;
 }
 
-.nav_item:nth-child(4) {
+nav .nav_item:nth-child(4) {
   top: 57%;
 }
 
-.nav_item:nth-child(5) {
+nav .nav_item:nth-child(5) {
   top: 70.5%;
 }
 
-.nav_item:nth-child(6) {
+nav .nav_item:nth-child(6) {
   top: 84.5%;
 }
 
-.nav_item:nth-child(2):hover img {
+nav .nav_item:nth-child(2):hover img {
   stroke: red !important;
 }
 
-.nav_item img {
+nav .nav_item img {
   width: 35px;
   height: 35px;
   justify-self: center;
@@ -201,7 +201,9 @@ nav .nav-image {
 }
 
 body {
-  background-image: radial-gradient(circle, #eafdff, #dffbfe, #d4f8fe, #c9f6fe, #bdf3ff);
+  padding: 0;
+  margin: 0;
+  background-color: #d4f8fe;
 }
 
 #app {
@@ -213,30 +215,22 @@ body {
 }
 
 main {
-  display: flex;
-  flex-direction: column;
+  display: block;
   padding-left: 50px;
 }
 
 main h1 {
   color: #396488;
   font-weight: 700;
+  padding-bottom: 20px;
   margin-top: 100px;
   margin-bottom: 0;
   display: inline-block;
+  border-bottom: 2px solid #396488;
 }
 
-.divider {
-  width: 200px;
-  height: 2px;
-  border-radius: 5px;
-  background-color: #396488;
-  display: inline-block;
-  margin-top: 20px;
-}
-
-.content {
-  margin-top: 20px;
+main .content {
+  margin-top: 50px;
   width: calc(100% - 400px);
 }
 
