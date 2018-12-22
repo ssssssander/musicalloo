@@ -122,10 +122,11 @@ nav .nav_item:nth-child(2):hover img {
 }
 
 nav .nav_item img {
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   justify-self: center;
   align-self: center;
+  opacity: 0.75;
 }
 
 /* Toilet */
