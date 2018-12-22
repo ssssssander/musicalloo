@@ -5,15 +5,12 @@
 // Variables
 @import 'variables';
 @import 'map';
+@import 'main';
 @import 'nav';
 @import 'toilet';
 
-// Bootstrap
-// @import '~bootstrap/scss/bootstrap';
 
-
-
-/* --- Main --- */
+/* --- GENERAL --- */
 
 * {
 	font-family: $font_family;
@@ -26,59 +23,7 @@ body {
 }
 
 #app {
-    display: flex;
     height: 100vh;
     position: relative;
-}
-
-a {
-	color: $secondary;
-}
-
-main {
-	position: relative;
-    display: block;
-    max-height: 60vh;
-    min-height: 400px;
-    width: 60vw;
-    padding: $size_m;
-    padding-left: $size_l;
-    margin: 0 auto;
-    margin-top: 20vh;
-    overflow-y: auto;
-    background-color: $primary;
-    box-sizing: border-box;
-    box-shadow: 10px 10px 0px 0px $secondary;
-
-    h1 {
-	    color: $light_grey;
-	    font-weight: 700;
-	    padding-bottom: $size_xs;
-	    margin: 0;
-	    display: inline-block;
-	    border-bottom: 2px solid $light_grey;
-    }
-
-	.content {
-	    margin-top: $size_s;
-	    color: $light_grey;
-	}
-}
-
-// Scrollbar
-
-::-webkit-scrollbar { /* width */
-  width: 5px;
-}
-
-::-webkit-scrollbar-track { /* Track */
-  background: $white; 
-}
-
-::-webkit-scrollbar-thumb { /* Handle */
-  background: $grey; 
-}
-
-::-webkit-scrollbar-thumb:hover { /* Handle on hover */
-  background: $dark_grey;
+    overflow: auto;
 }

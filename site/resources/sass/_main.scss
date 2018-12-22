@@ -1,0 +1,65 @@
+/* Main */
+
+main {
+	position: relative;
+    display: block;
+    max-height: 60vh;
+    min-height: 400px;
+    width: 60vw;
+    padding: $size_m;
+    padding-left: $size_l;
+    margin: 0 auto;
+    margin-top: 20vh;
+    overflow-y: auto;
+    background-color: $primary;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 0px 0px $secondary;
+
+	.content {
+	    margin-top: $size_s;
+	    color: $light_grey;
+	}
+
+
+	// Text Styling
+
+    h1 {
+	    color: $light_grey;
+	    font-weight: 700;
+	    padding-bottom: $size_xs;
+	    margin: 0;
+	    display: inline-block;
+	    border-bottom: 2px solid $light_grey;
+    }
+
+	a {
+		color: $secondary;
+	}
+
+	.large_p {
+		font-size: 1.2em;
+		font-style: italic;
+	}
+	.bolded {
+		font-weight: 900;
+	}
+}
+
+
+// Scrollbar
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: $white; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: $grey; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $dark_grey;
+}
