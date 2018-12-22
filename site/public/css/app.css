@@ -14,14 +14,11 @@
 /* Navigation Toilet Roll */
 
 nav {
-  position: relative;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin-top: 50px;
-  margin-left: 50px;
-  min-width: 101px;
+  position: fixed;
+  margin-top: 20vh;
+  margin-left: 17vw;
   height: 400px;
+  z-index: 100;
 }
 
 nav .nav-image {
@@ -73,21 +70,21 @@ nav .nav_item img {
 /* Toilet */
 
 .toilet-wrapper {
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  height: 300px;
-  right: 55px;
+  height: 100px;
+  right: 50px;
 }
 
 .toilet-image {
-  height: 300px;
+  height: 100px;
 }
 
 .music-note1 {
   position: absolute;
   top: 50%;
   left: 26%;
-  height: 50px;
+  height: 25px;
   -webkit-animation: fly-up1 2s linear infinite;
           animation: fly-up1 2s linear infinite;
 }
@@ -100,8 +97,8 @@ nav .nav_item img {
   }
 
   100% {
-    -webkit-transform: translateX(-100px) translateY(-200px);
-            transform: translateX(-100px) translateY(-200px);
+    -webkit-transform: translateX(-50px) translateY(-100px);
+            transform: translateX(-50px) translateY(-100px);
     opacity: 0;
   }
 }
@@ -114,8 +111,8 @@ nav .nav_item img {
   }
 
   100% {
-    -webkit-transform: translateX(-100px) translateY(-200px);
-            transform: translateX(-100px) translateY(-200px);
+    -webkit-transform: translateX(-50px) translateY(-100px);
+            transform: translateX(-50px) translateY(-100px);
     opacity: 0;
   }
 }
@@ -124,7 +121,7 @@ nav .nav_item img {
   position: absolute;
   top: 50%;
   left: 26%;
-  height: 50px;
+  height: 25px;
   -webkit-animation: fly-up2 2s 2.45s linear infinite;
           animation: fly-up2 2s 2.45s linear infinite;
 }
@@ -137,8 +134,8 @@ nav .nav_item img {
   }
 
   100% {
-    -webkit-transform: translateX(40px) translateY(-150px);
-            transform: translateX(40px) translateY(-150px);
+    -webkit-transform: translateX(20px) translateY(-75px);
+            transform: translateX(20px) translateY(-75px);
     opacity: 0;
   }
 }
@@ -151,8 +148,8 @@ nav .nav_item img {
   }
 
   100% {
-    -webkit-transform: translateX(40px) translateY(-150px);
-            transform: translateX(40px) translateY(-150px);
+    -webkit-transform: translateX(20px) translateY(-75px);
+            transform: translateX(20px) translateY(-75px);
     opacity: 0;
   }
 }
@@ -161,7 +158,7 @@ nav .nav_item img {
   position: absolute;
   top: 50%;
   left: 26%;
-  height: 50px;
+  height: 25px;
   -webkit-animation: fly-up3 2s 1.66s linear infinite;
           animation: fly-up3 2s 1.66s linear infinite;
 }
@@ -174,8 +171,8 @@ nav .nav_item img {
   }
 
   100% {
-    -webkit-transform: translateX(-10px) translateY(-250px);
-            transform: translateX(-10px) translateY(-250px);
+    -webkit-transform: translateX(-5px) translateY(-125px);
+            transform: translateX(-5px) translateY(-125px);
     opacity: 0;
   }
 }
@@ -188,8 +185,8 @@ nav .nav_item img {
   }
 
   100% {
-    -webkit-transform: translateX(-10px) translateY(-250px);
-            transform: translateX(-10px) translateY(-250px);
+    -webkit-transform: translateX(-5px) translateY(-125px);
+            transform: translateX(-5px) translateY(-125px);
     opacity: 0;
   }
 }
@@ -203,34 +200,66 @@ nav .nav_item img {
 body {
   padding: 0;
   margin: 0;
-  background-color: #d4f8fe;
+  background-color: #F2F3F9;
 }
 
 #app {
   display: flex;
   height: 100vh;
-  margin: 0 auto;
-  max-width: 1200px;
   position: relative;
 }
 
+a {
+  color: #0C426D;
+}
+
 main {
+  position: relative;
   display: block;
-  padding-left: 50px;
+  max-height: 60vh;
+  min-height: 400px;
+  width: 60vw;
+  padding: 50px;
+  padding-left: 75px;
+  margin: 0 auto;
+  margin-top: 20vh;
+  overflow-y: auto;
+  background-color: #52A7FC;
+  box-sizing: border-box;
+  box-shadow: 10px 10px 0px 0px #0C426D;
 }
 
 main h1 {
-  color: #396488;
+  color: #F2F3F9;
   font-weight: 700;
-  padding-bottom: 20px;
-  margin-top: 100px;
-  margin-bottom: 0;
+  padding-bottom: 10px;
+  margin: 0;
   display: inline-block;
-  border-bottom: 2px solid #396488;
+  border-bottom: 2px solid #F2F3F9;
 }
 
 main .content {
-  margin-top: 50px;
-  width: calc(100% - 400px);
+  margin-top: 25px;
+  color: #F2F3F9;
+}
+
+::-webkit-scrollbar {
+  /* width */
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  /* Track */
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  /* Handle */
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  /* Handle on hover */
+  background: #555;
 }
 

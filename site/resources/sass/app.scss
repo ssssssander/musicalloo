@@ -22,33 +22,63 @@
 body {
 	padding: 0;
 	margin: 0;
-	background-color: $bg;
+	background-color: $light_grey;
 }
 
 #app {
     display: flex;
     height: 100vh;
-    margin: 0 auto;
-    max-width: 1200px;
     position: relative;
 }
 
+a {
+	color: $secondary;
+}
+
 main {
+	position: relative;
     display: block;
-    padding-left: 50px;
+    max-height: 60vh;
+    min-height: 400px;
+    width: 60vw;
+    padding: $size_m;
+    padding-left: $size_l;
+    margin: 0 auto;
+    margin-top: 20vh;
+    overflow-y: auto;
+    background-color: $primary;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 0px 0px $secondary;
 
     h1 {
-	    color: $primary;
+	    color: $light_grey;
 	    font-weight: 700;
-	    padding-bottom: 20px;
-	    margin-top: 100px;
-	    margin-bottom: 0;
+	    padding-bottom: $size_xs;
+	    margin: 0;
 	    display: inline-block;
-	    border-bottom: 2px solid $primary;
+	    border-bottom: 2px solid $light_grey;
     }
 
 	.content {
-	    margin-top: 50px;
-	    width: calc(100% - 400px);
+	    margin-top: $size_s;
+	    color: $light_grey;
 	}
+}
+
+// Scrollbar
+
+::-webkit-scrollbar { /* width */
+  width: 5px;
+}
+
+::-webkit-scrollbar-track { /* Track */
+  background: $white; 
+}
+
+::-webkit-scrollbar-thumb { /* Handle */
+  background: $grey; 
+}
+
+::-webkit-scrollbar-thumb:hover { /* Handle on hover */
+  background: $dark_grey;
 }
