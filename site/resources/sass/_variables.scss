@@ -1,20 +1,20 @@
 
-// Body
-$body-bg: #f8fafc;
-
 // Typography
-$font-family-sans-serif: "Nunito", sans-serif;
-$font-size-base: 0.9rem;
-$line-height-base: 1.6;
+$font_family: "Nunito", sans-serif;
 
 // Colors
-$blue: #3490dc;
-$indigo: #6574cd;
-$purple: #9561e2;
-$pink: #f66D9b;
-$red: #e3342f;
-$orange: #f6993f;
-$yellow: #ffed4a;
-$green: #38c172;
-$teal: #4dc0b5;
-$cyan: #6cb2eb;
+$bg: 			#CDE5FE;
+$white: 		#fff;
+$light_grey: 	#F2F3F9;
+$grey: 			#888;
+$dark_grey: 	#555;
+$primary: 		#52A7FC;
+$secondary: 	#0C426D;
+
+// Spaces & Sizes
+$toilet_size: 	100px;
+
+$size_xs:		10px;
+$size_s:		25px;
+$size_m: 		50px;
+$size_l: 		75px;

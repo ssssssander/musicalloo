@@ -36184,8 +36184,8 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Sander\Documents\KdG\4de jaar\Project\P2\musicalloo\site\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Sander\Documents\KdG\4de jaar\Project\P2\musicalloo\site\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\_all\school kdg 2018-19\Project Web\P2 Musicalloo\github\musicalloo\site\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\_all\school kdg 2018-19\Project Web\P2 Musicalloo\github\musicalloo\site\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

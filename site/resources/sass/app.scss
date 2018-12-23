@@ -4,11 +4,26 @@
 
 // Variables
 @import 'variables';
+@import 'map';
+@import 'main';
+@import 'nav';
+@import 'toilet';
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+/* --- GENERAL --- */
+
+* {
+	font-family: $font_family;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	background-color: $light_grey;
+}
+
+#app {
+    height: 100vh;
+    position: relative;
+    overflow: auto;
 }
