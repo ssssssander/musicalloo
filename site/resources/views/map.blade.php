@@ -1,13 +1,13 @@
-@extends('layouts.main')
+@extends('layouts.app')
 
 @section('title', 'Map')
 
-@section('content')
-	<div class="mapcontainer">
-	    <h1>Map</h1>
+@section('main')
+    <main>
+        <h1>Map</h1>
 
-	    <div id="mapid"></div>
-    </div>
+        <div id="mapid"></div>
+    </main>
 @endsection
 
 
