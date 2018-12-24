@@ -2,8 +2,8 @@
 
 nav {
     position: fixed;
-    margin-top: 20vh;
-    margin-left: 17vw;
+    margin-top: 10vh;
+    margin-left: 8vw;
     height: 400px;
     z-index: 100;
 
@@ -52,5 +52,25 @@ nav {
         justify-self: center;
         align-self: center;
         opacity: .75;
+    }
+}
+
+
+
+// Responsive
+
+// large screen
+@media screen and (min-width: 1200px) {
+    nav {
+        margin-top: 15vh;
+        margin-left: 18vw;
+    }
+}
+
+// mobile
+@media screen and (max-width: 600px) {
+    nav {
+        margin-top: 0;
+        margin-left: 0;
     }
 }

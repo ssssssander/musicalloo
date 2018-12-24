@@ -3,13 +3,13 @@
 main {
 	position: relative;
     display: block;
-    max-height: 60vh;
-    min-height: 400px;
-    width: 60vw;
+    max-height: 80vh;
+    min-height: 450px;
+    width: 80vw;
     padding: $size_m;
     padding-left: $size_l;
     margin: 0 auto;
-    margin-top: 20vh;
+    margin-top: 10vh;
     overflow-y: auto;
     background-color: $primary;
     box-sizing: border-box;
@@ -62,4 +62,31 @@ main {
 
 ::-webkit-scrollbar-thumb:hover {
   background: $dark_grey;
+}
+
+
+// Responsive
+
+// large screen
+@media screen and (min-width: 1200px) {
+	main {
+	    max-height: 70vh;
+	    width: 60vw;
+	    margin-top: 15vh;
+	}
+}
+
+// mobile
+@media screen and (max-width: 600px) {
+	main {
+	    max-height: 90vh;
+	    width: calc(100vw - (2 * #{$size_s}));
+    	padding: $size_s;
+	    margin-top: $size_s;
+
+	    h1 {
+	    	display: block;
+	    	text-align: right;
+	    }
+	}
 }
