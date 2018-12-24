@@ -1,5 +1,8 @@
-<nav>
-    <img class="nav-image" src="svg/navigation2.svg" alt="navigation">
+<nav class="closed" id="nav">
+    <img class="nav-image" src="{{ asset('graphics/nav.svg') }}" alt="navigation">
+
+    <div id="img_tap_div"></div>
+
     <a class="nav_item" href="{{ route('home') }}">
         <img src="{{ asset('graphics/icons/home.svg') }}" alt="homeIcon">
     </a>
