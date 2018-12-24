@@ -11,25 +11,25 @@ main {
     margin: 0 auto;
     margin-top: 10vh;
     overflow-y: auto;
-    background-color: $primary;
+    background-color: $light_grey;
     box-sizing: border-box;
-    box-shadow: 10px 10px 0px 0px $secondary;
+    box-shadow: 0px 0px 30px 0px rgba(0,0,0, .35);
 
 	.content {
 	    margin-top: $size_s;
-	    color: $light_grey;
+	    color: $dark_grey;
 	}
 
 
 	// Text Styling
 
     h1 {
-	    color: $light_grey;
+	    color: $dark_grey;
 	    font-weight: 700;
 	    padding-bottom: $size_xs;
 	    margin: 0;
 	    display: inline-block;
-	    border-bottom: 2px solid $light_grey;
+	    border-bottom: 2px solid $dark_grey;
     }
 
 	a {

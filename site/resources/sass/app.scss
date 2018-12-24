@@ -19,13 +19,13 @@
 body {
 	padding: 0;
 	margin: 0;
-	background-color: $light_grey;
+	background-color: $primary;
 }
 
 body::after {
   content: "";
   background: url("/graphics/bg.svg");
-  opacity: 0.05;
+  opacity: 0.08;
   top: 0;
   left: 0;
   bottom: 0;

@@ -25,23 +25,23 @@ main {
   margin: 0 auto;
   margin-top: 10vh;
   overflow-y: auto;
-  background-color: #52A7FC;
+  background-color: #F2F3F9;
   box-sizing: border-box;
-  box-shadow: 10px 10px 0px 0px #0C426D;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.35);
 }
 
 main .content {
   margin-top: 25px;
-  color: #F2F3F9;
+  color: #555;
 }
 
 main h1 {
-  color: #F2F3F9;
+  color: #555;
   font-weight: 700;
   padding-bottom: 10px;
   margin: 0;
   display: inline-block;
-  border-bottom: 2px solid #F2F3F9;
+  border-bottom: 2px solid #555;
 }
 
 main a {
@@ -118,6 +118,7 @@ nav .nav_item {
   display: flex;
   justify-content: center;
   cursor: pointer;
+  opacity: 0.75;
 }
 
 nav .nav_item:nth-child(3) {
@@ -335,13 +336,13 @@ nav .nav_item img {
 body {
   padding: 0;
   margin: 0;
-  background-color: #F2F3F9;
+  background-color: #A2D8F9;
 }
 
 body::after {
   content: "";
   background: url("/graphics/bg.svg");
-  opacity: 0.05;
+  opacity: 0.08;
   top: 0;
   left: 0;
   bottom: 0;
