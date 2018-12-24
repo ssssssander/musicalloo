@@ -338,6 +338,18 @@ body {
   background-color: #F2F3F9;
 }
 
+body::after {
+  content: "";
+  background: url("/graphics/bg.svg");
+  opacity: 0.05;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
 #app {
   height: 100vh;
   position: relative;
