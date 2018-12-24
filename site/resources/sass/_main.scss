@@ -9,14 +9,13 @@ main {
     padding: $size_m;
     padding-left: $size_l;
     margin: 0 auto;
-    margin-top: 10vh;
+    margin-top: 15vh;
     overflow-y: auto;
     background-color: $light_grey;
     box-sizing: border-box;
     box-shadow: 0px 0px 30px 0px rgba(0,0,0, .35);
 
 	.content {
-	    margin-top: $size_s;
 	    color: $dark_grey;
 	}
 
@@ -28,6 +27,7 @@ main {
 	    font-weight: 700;
 	    padding-bottom: $size_xs;
 	    margin: 0;
+	    margin-bottom: $size_s;
 	    display: inline-block;
 	    border-bottom: 2px solid $dark_grey;
     }
@@ -79,6 +79,7 @@ main {
 // mobile
 @media screen and (max-width: 600px) {
 	main {
+	    height: 90vh;
 	    max-height: 90vh;
 	    width: calc(100vw - (2 * #{$size_s}));
     	padding: $size_s;
@@ -86,6 +87,8 @@ main {
 
 	    h1 {
 	    	display: block;
+	    	width: 80%;
+	    	padding-left: 20%;
 	    	text-align: right;
 	    }
 	}

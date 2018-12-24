@@ -4,8 +4,9 @@
 
 @section('main')
     <main>
-        <h1>Musicalloo</h1>
         <div class="content">
+            <h1>Musicalloo</h1>
+
             <p>
                 Did you know you spend about 92 entire days sitting on the toilet? 92 entire days - it's no wonder you try looking for something fun to do, like reading a book or checking your ex's embarrassing twitter updates.
             </p>
@@ -18,12 +19,7 @@
             </p>
         </div>
 
-        <div class="toilet-wrapper">
-            <img class="music-note1" src="{{ asset('graphics/icons/music_note_1.svg') }}" alt="note">
-            <img class="music-note2" src="{{ asset('graphics/icons/music_note_2.svg') }}" alt="note">
-            <img class="music-note3" src="{{ asset('graphics/icons/music_note_4.svg') }}" alt="note">
-            <img class="toilet-image" src="svg/toilet.svg" alt="toilet">
-        </div>
+        @include('partials/toilet')
 
     </main>
 @endsection

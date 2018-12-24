@@ -93,13 +93,21 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var menu_btn = document.getElementById("img_tap_div");
-var nav = document.getElementById("nav");
+$(document).ready(function () {
+  // music page
+  var categories = $(".category h3");
+  categories.click(function () {
+    $(this).parent().toggleClass("closed");
+    $(this).parent().toggleClass("opened");
+  }); // mobile menu
 
-menu_btn.onclick = function () {
-  nav.classList.toggle("closed");
-  nav.classList.toggle("opened");
-};
+  var menu_btn = $("#img_tap_div");
+  var nav = $("#nav");
+  menu_btn.click(function () {
+    nav.toggleClass("closed");
+    nav.toggleClass("opened");
+  });
+});
 
 /***/ }),
 

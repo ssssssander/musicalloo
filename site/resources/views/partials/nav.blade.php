@@ -6,7 +6,7 @@
     <a class="nav_item" href="{{ route('home') }}">
         <img src="{{ asset('graphics/icons/outlines/home.svg') }}" alt="homeIcon">
     </a>
-    <a class="nav_item">
+    <a class="nav_item" href="{{ route('music') }}">
         <img src="{{ asset('graphics/icons/outlines/music_note.svg') }}" alt="musicIcon">
     </a>
     <a class="nav_item" href="{{ route('map') }}">
