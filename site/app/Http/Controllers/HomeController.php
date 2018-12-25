@@ -13,6 +13,12 @@ class HomeController extends Controller
     }
 
 
+    public function music()
+    {
+        return view('music');
+    }
+
+
     public function map()
     {
         $markers = Marker::all();

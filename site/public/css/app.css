@@ -1,8 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);/* Map styling */
 
 #mapid {
-  height: 700px;
-  width: 1000px;
+  height: 400px;
+  width: 100%;
+  margin-top: 25px;
 }
 
 .mapcontainer {
@@ -12,6 +13,49 @@
 }
 
 /* Main */
+
+main {
+  position: relative;
+  display: block;
+  max-height: 80vh;
+  min-height: 450px;
+  width: 80vw;
+  padding: 50px;
+  padding-left: 75px;
+  margin: 0 auto;
+  margin-top: 15vh;
+  overflow-y: auto;
+  background-color: #F2F3F9;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.35);
+}
+
+main .content {
+  color: #555;
+}
+
+main h1 {
+  color: #555;
+  font-weight: 700;
+  padding-bottom: 10px;
+  margin: 0;
+  margin-bottom: 25px;
+  display: inline-block;
+  border-bottom: 2px solid #555;
+}
+
+main a {
+  color: #0C426D;
+}
+
+main .large_p {
+  font-size: 1.2em;
+  font-style: italic;
+}
+
+main .bolded {
+  font-weight: 900;
+}
 
 ::-webkit-scrollbar {
   width: 5px;
@@ -29,12 +73,99 @@
   background: #555;
 }
 
+@media screen and (min-width: 1200px) {
+  main {
+    max-height: 70vh;
+    width: 60vw;
+    margin-top: 15vh;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  main {
+    height: 90vh;
+    max-height: 90vh;
+    width: calc(100vw - (2 * 25px));
+    padding: 25px;
+    margin-top: 25px;
+  }
+
+  main h1 {
+    display: block;
+    width: 80%;
+    padding-left: 20%;
+    text-align: right;
+  }
+}
+
+.category h3 {
+  position: relative;
+  padding: 10px;
+  margin-bottom: 0;
+  background-color: #0C426D;
+  color: #F2F3F9;
+  cursor: pointer;
+}
+
+.music_list {
+  background-color: #A2D8F9;
+  padding: 10px;
+  margin-top: 0;
+}
+
+.music_list h4 {
+  display: inline-block;
+  margin-bottom: 0;
+  border-bottom: 1px solid #888;
+}
+
+.music_list p {
+  margin-top: 0;
+}
+
+.closed .music_list {
+  display: none;
+  height: 0;
+  width: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.opened .music_list {
+  display: auto;
+}
+
+.arrow_container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  padding-top: 15px;
+}
+
+.arrow_container .arrow1,
+.arrow_container .arrow2 {
+  position: absolute;
+  width: 4px;
+  height: 15px;
+  background-color: #F2F3F9;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.arrow_container .arrow2 {
+  left: 8px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
 /* Navigation Toilet Roll */
 
 nav {
   position: fixed;
-  margin-top: 20vh;
-  margin-left: 17vw;
+  margin-top: 10vh;
+  margin-left: 8vw;
   height: 400px;
   z-index: 100;
 }
@@ -52,29 +183,30 @@ nav .nav_item {
   display: flex;
   justify-content: center;
   cursor: pointer;
-}
-
-nav .nav_item:nth-child(2) {
-  top: 30%;
+  opacity: 0.75;
 }
 
 nav .nav_item:nth-child(3) {
-  top: 43.5%;
+  top: 30%;
 }
 
 nav .nav_item:nth-child(4) {
-  top: 57%;
+  top: 43.5%;
 }
 
 nav .nav_item:nth-child(5) {
-  top: 70.5%;
+  top: 57%;
 }
 
 nav .nav_item:nth-child(6) {
+  top: 70.5%;
+}
+
+nav .nav_item:nth-child(7) {
   top: 84.5%;
 }
 
-nav .nav_item:nth-child(2):hover img {
+nav .nav_item:nth-child(3):hover img {
   stroke: red !important;
 }
 
@@ -84,6 +216,72 @@ nav .nav_item img {
   justify-self: center;
   align-self: center;
   opacity: 0.75;
+}
+
+@media screen and (min-width: 1200px) {
+  nav {
+    margin-top: 15vh;
+    margin-left: 18vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  nav {
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  .closed img.nav-image {
+    content: url("/graphics/nav2.svg");
+  }
+
+  .closed #img_tap_div {
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 150px;
+  }
+
+  .closed .nav_item {
+    display: none;
+  }
+
+  .opened img.nav-image {
+    content: url("/graphics/nav.svg");
+  }
+
+  .opened #img_tap_div {
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 150px;
+  }
+
+  .opened .nav_item {
+    display: flex;
+  }
+}
+
+form input,
+form label,
+form textarea {
+  display: block;
+  font-size: 1em;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 25px;
+  box-sizing: border-box;
+  border: 0;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: 0;
+  border-bottom: 2px solid #A2D8F9;
 }
 
 /* Toilet */
@@ -212,6 +410,12 @@ nav .nav_item img {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .toilet-wrapper {
+    display: none;
+  }
+}
+
 .login-page {
   width: 100vw;
   height: 100vh;
@@ -292,11 +496,49 @@ nav .nav_item img {
 body {
   padding: 0;
   margin: 0;
+  background-color: #A2D8F9;
+}
+
+body::after {
+  content: "";
+  background: url("/graphics/bg.svg");
+  opacity: 0.08;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
 
 #app {
   height: 100vh;
   position: relative;
   overflow: auto;
+}
+
+.hidden {
+  display: none;
+  height: 0;
+  width: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.btn {
+  display: block;
+  width: 50%;
+  padding: 10px 25px;
+  margin: 25px auto;
+  border: 0;
+  background-color: #A2D8F9;
+  color: #fff;
+  font-size: 1.25em;
+  transition: all 0.5s;
+}
+
+.btn:hover {
+  background-color: #0C426D;
+  transition: all 0.5s;
 }
 

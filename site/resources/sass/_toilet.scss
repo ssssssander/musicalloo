@@ -68,3 +68,11 @@
         opacity: 0;
     }
 }
+
+
+// mobile
+@media screen and (max-width: 600px) {
+    .toilet-wrapper {
+        display: none;
+    }
+}
