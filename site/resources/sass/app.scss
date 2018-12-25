@@ -8,6 +8,7 @@
 @import 'main';
 @import 'nav';
 @import 'toilet';
+@import 'login-form';
 
 
 /* --- GENERAL --- */
@@ -19,7 +20,7 @@
 body {
 	padding: 0;
 	margin: 0;
-	background-color: $light_grey;
+	// background-color: $light_grey;
 }
 
 #app {

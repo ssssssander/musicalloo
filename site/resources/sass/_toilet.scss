@@ -1,10 +1,11 @@
 /* Toilet */
 
 .toilet-wrapper {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     height: $toilet_size;
-    right: 50px;
+    left: 75%;
+    transform: translateX(-50%);
 }
 
 .toilet-image {
@@ -15,7 +16,7 @@
     position: absolute;
     top: 50%;
     left: 26%;
-    height: 25px;
+    height: 50px;
     animation: fly-up1 2s linear infinite;
 }
 
@@ -34,7 +35,7 @@
     position: absolute;
     top: 50%;
     left: 26%;
-    height: 25px;
+    height: 50px;
     animation: fly-up2 2s 2.45s linear infinite;
 }
 
@@ -53,7 +54,7 @@
     position: absolute;
     top: 50%;
     left: 26%;
-    height: 25px;
+    height: 50px;
     animation: fly-up3 2s 1.66s linear infinite;
 }
 

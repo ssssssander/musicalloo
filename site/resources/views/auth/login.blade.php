@@ -3,7 +3,7 @@
 @section('title', 'Login')
 
 @section('content')
-<div class="container">
+<!-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -69,6 +69,26 @@
                     </form>
                 </div>
             </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="login-page">
+    <div class="left-column">
+        <div class="login-form">
+            <h1>{{ __('Login') }}</h1>
+            <input type='text' id='username' placeholder='Username'>
+            <input type='password' id='password' placeholder='Password'>
+            <div class="forgot-pw">Forgot your password?</div>
+            <button type="submit">Log in</button>
+        </div>
+    </div>
+    <div class="right-column">
+        <div class="toilet-wrapper">
+            <img class="music-note1" src="{{ asset('graphics/icons/music_note_1.svg') }}" alt="note">
+            <img class="music-note2" src="{{ asset('graphics/icons/music_note_2.svg') }}" alt="note">
+            <img class="music-note3" src="{{ asset('graphics/icons/music_note_4.svg') }}" alt="note">
+            <img class="toilet-image" src="svg/toilet.svg" alt="toilet">
         </div>
     </div>
 </div>

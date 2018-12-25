@@ -2,6 +2,7 @@
 
 @section('title', 'Home')
 
+@include('partials.nav')
 @section('main')
     <main>
         <h1>Musicalloo</h1>

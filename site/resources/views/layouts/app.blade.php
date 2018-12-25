@@ -35,7 +35,6 @@
 </head>
 <body>
     <div id="app">
-        @include('partials.nav')
         @yield('main')
     </div>
     @yield('custom-scripts')
