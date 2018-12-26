@@ -1,0 +1,54 @@
+.category h3 {
+	position: relative;
+	padding: $size_xs;
+	margin-bottom: 0;
+	background-color: $secondary;
+	color: $light_grey;
+	cursor: pointer;
+}
+
+.music_list {
+	background-color: $primary;
+	padding: $size_xs;
+	margin-top: 0;
+
+	h4 {
+		display: inline-block;
+		margin-bottom: 0;
+		border-bottom: 1px solid $grey;
+	}
+
+	p {
+		margin-top: 0;
+	}
+}
+
+.closed .music_list {
+	display: none; height: 0; width: 0; padding: 0; margin: 0;
+}
+
+.opened .music_list {
+	display: auto;
+}
+
+.arrow_container {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	width: 50px;
+	padding-top: 15px;
+
+	.arrow1, .arrow2 {
+		position: absolute;
+		width: 4px;
+		height: 15px;
+		background-color: $light_grey;
+		transform: rotate(-45deg);
+	}
+
+	.arrow2 {
+		left: 8px;
+		transform: rotate(45deg);
+	}
+}

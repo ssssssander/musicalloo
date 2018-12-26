@@ -1,9 +1,9 @@
-@extends('layouts.main')
+@extends('layouts.app')
 
 @section('title', 'Login')
 
-@section('content')
-<div class="container">
+@section('login')
+<!-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -69,6 +69,40 @@
                     </form>
                 </div>
             </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="login-page">
+    <div class="left-column">
+        <form method="POST" action="{{ route('login') }}" class="login-form">
+            @csrf
+
+            <h1>{{ __('Login') }}</h1>
+
+            @if ($errors->has('email'))
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('email') }}</strong>
+                </span>
+            @endif
+            <input type='text' id='email' placeholder='Email' name="email" required>
+
+            @if ($errors->has('password'))
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('password') }}</strong>
+                </span>
+            @endif
+            <input type='password' id='password' placeholder='Password' name="password" required>
+            <a class="forgot-pw" href="{{ route('password.request') }}">Forgot your password?</a>
+            <button type="submit">Log in</button>
+        </form>
+    </div>
+    <div class="right-column">
+        <div class="toilet-wrapper">
+            <img class="music-note1" src="{{ asset('graphics/icons/music_note_1.svg') }}" alt="note">
+            <img class="music-note2" src="{{ asset('graphics/icons/music_note_2.svg') }}" alt="note">
+            <img class="music-note3" src="{{ asset('graphics/icons/music_note_4.svg') }}" alt="note">
+            <img class="toilet-image" src="svg/toilet.svg" alt="toilet">
         </div>
     </div>
 </div>
