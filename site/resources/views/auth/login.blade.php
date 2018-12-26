@@ -85,14 +85,14 @@
                     <strong>{{ $errors->first('email') }}</strong>
                 </span>
             @endif
-            <input type='text' id='email' placeholder='Email' required>
+            <input type='text' id='email' placeholder='Email' name="email" required>
 
             @if ($errors->has('password'))
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $errors->first('password') }}</strong>
                 </span>
             @endif
-            <input type='password' id='password' placeholder='Password' required>
+            <input type='password' id='password' placeholder='Password' name="password" required>
             <a class="forgot-pw" href="{{ route('password.request') }}">Forgot your password?</a>
             <button type="submit">Log in</button>
         </form>
