@@ -566,3 +566,9 @@ body::after {
   color: #0C426D;
 }
 
+.create-link {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+}
+

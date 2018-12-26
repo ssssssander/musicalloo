@@ -4,7 +4,7 @@
 
 @section('content')
     <h1>Music</h1>
-    <h1><a href="{{ route('music.create') }}">CREATE</a></h1>
+    <a class="create-link" href="{{ route('music.create') }}">CREATE</a>
     <ul>
         @forelse ($musicSets as $musicSet)
             <li>
