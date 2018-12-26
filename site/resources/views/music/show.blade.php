@@ -8,7 +8,8 @@
         @forelse ($musicFiles as $musicFile)
             <li>
                 <audio controls>
-                    <source src="{{ url('storage/' . $musicFile->path) }}">
+                    <source src="{{ asset('storage/' . $musicFile->path) }}"
+                        type="{{ mime_content_type('storage/' . $musicFile->path) }}">
                     Your browser does not support the audio element.
                 </audio>
             </li>

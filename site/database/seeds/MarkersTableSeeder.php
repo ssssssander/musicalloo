@@ -13,6 +13,7 @@ class MarkersTableSeeder extends Seeder
     public function run()
     {
         DB::table('markers')->insert([
+            'user_id'   => '1', ////tofix
         	'latitude' 	=> '51.173315',
         	'longitude' => '4.371867',
         	'name' 		=> 'KdG Campus Hoboken',

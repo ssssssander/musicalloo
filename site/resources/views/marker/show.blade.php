@@ -22,7 +22,7 @@
         	<p>{{ $marker->longitude }}</p>
         </li>
     </ul>
-    
+    @include('partials.delete_marker_form')
     <a href="{{ route('marker.edit', ['id' => $marker->id]) }}">Edit marker</a>
 
 @endsection

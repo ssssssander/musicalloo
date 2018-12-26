@@ -11,5 +11,9 @@ class Marker extends Model
 
     protected $dates = ['deleted_at'];
 
-    protected $fillable = ['latitude', 'longitude', 'name', 'address'];
+    protected $fillable = ['user_id', 'latitude', 'longitude', 'name', 'address'];
+
+    public function user() {
+        return $this->belongsTo('App\User');
+    }
 }

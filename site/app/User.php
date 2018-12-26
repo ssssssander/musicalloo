@@ -31,4 +31,8 @@ class User extends Authenticatable
     public function musicSets() {
         return $this->hasMany('App\MusicSet');
     }
+
+    public function markers() {
+        return $this->hasMany('App\Marker');
+    }
 }

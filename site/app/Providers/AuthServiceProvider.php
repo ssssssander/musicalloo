@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use App\MusicSet;
 use App\Policies\MusicSetPolicy;
+use App\Marker;
+use App\Policies\MarkerPolicy;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -16,6 +18,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         MusicSet::class => MusicSetPolicy::class,
+        Marker::class   => MarkerPolicy::class,
     ];
 
     /**
