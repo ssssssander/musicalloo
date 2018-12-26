@@ -4,11 +4,101 @@
 
 // Variables
 @import 'variables';
+@import 'map';
+@import 'main';
+@import 'music';
+@import 'nav';
+@import 'form';
+@import 'toilet';
+@import 'login-form';
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+/* --- GENERAL --- */
+
+* {
+	font-family: $font_family;
+}
+
+body {
+	padding: 0;
+    margin: 0;
+    background-color: $primary;
+
+}
+
+body::after {
+  content: "";
+  background: url("/graphics/bg.svg");
+  opacity: 0.08;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.admin-body {
+    background-color: #fff;
+}
+
+.admin-body::after {
+    background: none;
+}
+
+#app {
+    height: 100vh;
+    position: relative;
+    overflow: auto;
+}
+
+.hidden {
+	display: none;
+	height: 0;
+	width: 0;
+	padding: 0;
+	margin: 0;
+}
+
+.btn {
+	display: block;
+	width: 50%;
+	padding: $size_xs $size_s;
+	margin: $size_s auto;
+	border: 0;
+	background-color: $primary;
+	color: $white;
+	font-size: 1.25em;
+
+	transition: all .5s;
+}
+
+.btn:hover {
+	background-color: $secondary;
+
+	transition: all .5s;
+}
+
+// Admin nav
+.admin-nav {
+    position: absolute;
+    top: 0;
+    right: 30px;
+
+    li {
+        list-style: none;
+        display: inline-block;
+    }
+
+    a {
+        text-decoration: none;
+        color: $secondary;
+    }
+}
+
+// Add music
+.create-link {
+    position: absolute;
+    right: 15px;
+    top: 10px;
 }

@@ -1,0 +1,78 @@
+/* Toilet */
+
+.toilet-wrapper {
+    position: absolute;
+    bottom: 0;
+    height: $toilet_size;
+    left: 75%;
+    transform: translateX(-50%);
+}
+
+.toilet-image {
+    height: $toilet_size;
+}
+
+.music-note1 {
+    position: absolute;
+    top: 50%;
+    left: 26%;
+    height: 50px;
+    animation: fly-up1 2s linear infinite;
+}
+
+@keyframes fly-up1 {
+    0% {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-50px) translateY(-100px);
+        opacity: 0;
+    }
+}
+
+.music-note2 {
+    position: absolute;
+    top: 50%;
+    left: 26%;
+    height: 50px;
+    animation: fly-up2 2s 2.45s linear infinite;
+}
+
+@keyframes fly-up2 {
+    0% {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(20px) translateY(-75px);
+        opacity: 0;
+    }
+}
+
+.music-note3 {
+    position: absolute;
+    top: 50%;
+    left: 26%;
+    height: 50px;
+    animation: fly-up3 2s 1.66s linear infinite;
+}
+
+@keyframes fly-up3 {
+    0% {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-5px) translateY(-125px);
+        opacity: 0;
+    }
+}
+
+
+// mobile
+@media screen and (max-width: 600px) {
+    .toilet-wrapper {
+        display: none;
+    }
+}

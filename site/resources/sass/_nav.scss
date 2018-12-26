@@ -1,0 +1,111 @@
+/* Navigation Toilet Roll */
+
+nav {
+    position: fixed;
+    margin-top: 10vh;
+    margin-left: 8vw;
+    height: 400px;
+    z-index: 100;
+
+    .nav-image {
+        height: 400px;
+    }
+
+    .nav_item {
+        position: absolute;
+        left: 11%;
+        width: 56px;
+        height: 56px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0.75;
+    }
+
+    .nav_item:nth-child(3) {
+        top: 30%;
+    }
+
+    .nav_item:nth-child(4) {
+        top: 43.5%;
+    }
+
+    .nav_item:nth-child(5) {
+        top: 57%;
+    }
+
+    .nav_item:nth-child(6) {
+        top: 70.5%;
+    }
+
+    .nav_item:nth-child(7) {
+        top: 84.5%;
+    }
+
+    .nav_item:nth-child(3):hover img {
+        stroke: red !important;
+    }
+
+    .nav_item img {
+        width: 30px;
+        height: 30px;
+        justify-self: center;
+        align-self: center;
+        opacity: .75;
+    }
+}
+
+
+
+// Responsive
+
+// large screen
+@media screen and (min-width: 1200px) {
+    nav {
+        margin-top: 15vh;
+        margin-left: 18vw;
+    }
+}
+
+// mobile
+@media screen and (max-width: 600px) {
+    nav {
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    .closed {
+        img.nav-image {
+            content: url("/graphics/nav2.svg");
+        }
+
+        #img_tap_div {
+            position: absolute;
+            top: 0;
+            width: 100px;
+            height: 150px;
+        }
+
+        .nav_item {
+            display: none;
+        }
+    }
+
+    .opened {
+        img.nav-image {
+            content: url("/graphics/nav.svg");
+        }
+
+        #img_tap_div {
+            position: absolute;
+            top: 0;
+            width: 100px;
+            height: 150px;
+        }
+
+        .nav_item {
+            display: flex;
+        }
+    }
+}
