@@ -1,8 +1,8 @@
-@extends('layouts.main')
+@extends('layouts.app')
 
 @section('title', 'Login')
 
-@section('content')
+@section('login')
 <!-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -75,13 +75,27 @@
 
 <div class="login-page">
     <div class="left-column">
-        <div class="login-form">
+        <form method="POST" action="{{ route('login') }}" class="login-form">
+            @csrf
+
             <h1>{{ __('Login') }}</h1>
-            <input type='text' id='username' placeholder='Username'>
-            <input type='password' id='password' placeholder='Password'>
-            <div class="forgot-pw">Forgot your password?</div>
+
+            @if ($errors->has('email'))
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('email') }}</strong>
+                </span>
+            @endif
+            <input type='text' id='email' placeholder='Email' required>
+
+            @if ($errors->has('password'))
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('password') }}</strong>
+                </span>
+            @endif
+            <input type='password' id='password' placeholder='Password' required>
+            <a class="forgot-pw" href="{{ route('password.request') }}">Forgot your password?</a>
             <button type="submit">Log in</button>
-        </div>
+        </form>
     </div>
     <div class="right-column">
         <div class="toilet-wrapper">

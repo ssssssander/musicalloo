@@ -511,6 +511,14 @@ body::after {
   z-index: -1;
 }
 
+.admin-body {
+  background-color: #fff;
+}
+
+.admin-body::after {
+  background: none;
+}
+
 #app {
   height: 100vh;
   position: relative;

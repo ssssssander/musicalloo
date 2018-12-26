@@ -33,9 +33,13 @@
    crossorigin=""></script>
 
 </head>
-<body>
+<body {{ (Request::is('login')) ? "class=admin-body" : "" }}>
     <div id="app">
+    @if (Request::is('login'))
+        @yield('login')
+    @else
         @yield('main')
+    @endif
     </div>
     @yield('custom-scripts')
 
