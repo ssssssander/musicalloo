@@ -2,6 +2,7 @@
 
 @section('title', 'Map')
 
+@include('partials.nav')
 @section('main')
     <main>
         <h1>Map</h1>

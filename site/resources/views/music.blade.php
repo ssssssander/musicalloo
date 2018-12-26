@@ -2,6 +2,7 @@
 
 @section('title', 'Home')
 
+@include('partials.nav')
 @section('main')
     <main>
         <div class="content">
@@ -34,7 +35,7 @@
                 <div class="category closed">
                     <h3>
                         Opera
-                        
+
                         <div class="arrow_container">
                             <div class="arrow1"></div>
                             <div class="arrow2"></div>
@@ -52,7 +53,7 @@
                 <div class="category closed">
                     <h3>
                         Classical Music
-                        
+
                         <div class="arrow_container">
                             <div class="arrow1"></div>
                             <div class="arrow2"></div>
