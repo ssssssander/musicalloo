@@ -550,3 +550,19 @@ body::after {
   transition: all 0.5s;
 }
 
+.admin-nav {
+  position: absolute;
+  top: 0;
+  right: 30px;
+}
+
+.admin-nav li {
+  list-style: none;
+  display: inline-block;
+}
+
+.admin-nav a {
+  text-decoration: none;
+  color: #0C426D;
+}
+

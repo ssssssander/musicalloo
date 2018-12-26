@@ -78,3 +78,20 @@ body::after {
 
 	transition: all .5s;
 }
+
+// Admin nav
+.admin-nav {
+    position: absolute;
+    top: 0;
+    right: 30px;
+
+    li {
+        list-style: none;
+        display: inline-block;
+    }
+
+    a {
+        text-decoration: none;
+        color: $secondary;
+    }
+}
