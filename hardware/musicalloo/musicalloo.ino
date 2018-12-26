@@ -49,6 +49,28 @@ bool playingAudio2 = false;
 
 
 unsigned long previousMillis = 0;
+unsigned int seconds = 0;
+
+
+
+
+String getValue(String data, char separator, int index)
+  {
+      int found = 0;
+      int strIndex[] = { 0, -1 };
+      int maxIndex = data.length() - 1;
+  
+      for (int i = 0; i <= maxIndex && found <= index; i++) {
+          if (data.charAt(i) == separator || i == maxIndex) {
+              found++;
+              strIndex[0] = strIndex[1] + 1;
+              strIndex[1] = (i == maxIndex) ? i+1 : i;
+          }
+      }
+      return found > index ? data.substring(strIndex[0], strIndex[1]) : "";
+  }
+
+
 
 
 void setup() {
@@ -72,7 +94,11 @@ void setup() {
   //music.play((char*)"audio1.wav");
 }
 
+
 void loop() {
+
+  unsigned long currentMillis = millis();
+  
   digitalWrite(TRIG1, LOW); // Clear trig pin
   delayMicroseconds(2);
   digitalWrite(TRIG1, HIGH);
@@ -93,9 +119,9 @@ void loop() {
   digitalWrite(TRIG2, LOW);
   
   duration2 = pulseIn(ECHO2, HIGH);
-  distance2= (duration2 * 0.034) / 2;
+  distance2 = (duration2 * 0.034) / 2;
 
-
+  
 
 
   
@@ -108,7 +134,7 @@ void loop() {
     if (!playingAudio2) {
       music.setVolume(6);
       
-      music.play((char*)"audio2.wav");
+      music.play((char*)"audio2.wav", seconds);
       playingAudio1 = false;
       playingAudio2 = true;
     }
@@ -120,8 +146,8 @@ void loop() {
       
     if (!playingAudio1) {
       music.setVolume(6);
-      
-      music.play((char*)"audio1.wav", 30);
+            
+      music.play((char*)"audio1.wav", seconds);
       playingAudio1 = true;
       playingAudio2 = false;
     }
@@ -144,6 +170,18 @@ void loop() {
   Serial.print(distance2);
   Serial.println(" cm");
 
+  Serial.println(seconds);
+
+  if (currentMillis - previousMillis >= 1000) {
+    previousMillis = currentMillis;
+    seconds++;
+  }
+
+  if (seconds >= 140) {
+    seconds = 0;
+  }
   
   delay(500);
+
+  Serial.println(getValue("audio1-125.wav", '-', 1));
 }
