@@ -34,6 +34,7 @@ int status = WL_IDLE_STATUS;
 // use the numeric IP instead of the name for the server:
 //IPAddress server(74,125,232,128);  // numeric IP for Google (no DNS)
 char server[] = "test.sander.borret.mtantwerp.eu";    // name address (using DNS)
+String result;
 
 // Initialize the Ethernet client library
 // with the IP address and port of the server
@@ -90,8 +91,11 @@ void loop() {
   // from the server, read them and print them:
   while (client.available()) {
     char c = client.read();
-    Serial.write(c);
+    result += c;
+    // Serial.write(c);
   }
+
+  Serial.println(result.substring(result.indexOf("<p>")+3, result.indexOf("</p>", result.indexOf("<p>")+3)));
 
   // if the server's disconnected, stop the client:
   if (!client.connected()) {
