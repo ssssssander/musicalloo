@@ -109,8 +109,9 @@ main .bolded {
 
 .music_list {
   background-color: #A2D8F9;
-  padding: 10px;
   margin-top: 0;
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
 }
 
 .music_list h4 {
@@ -123,16 +124,16 @@ main .bolded {
   margin-top: 0;
 }
 
+.music_list .music_list_item {
+  padding: 0 10px;
+}
+
 .closed .music_list {
-  display: none;
-  height: 0;
-  width: 0;
-  padding: 0;
-  margin: 0;
+  max-height: 0;
 }
 
 .opened .music_list {
-  display: auto;
+  max-height: 500px;
 }
 
 .arrow_container {
