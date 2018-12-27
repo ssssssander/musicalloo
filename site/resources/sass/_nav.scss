@@ -95,7 +95,7 @@ nav {
         display: block;
         position: absolute;
         bottom: -114px;
-        z-index: 110;
+        z-index: 90;
         width: 53px;
         left: 12px;
     }
@@ -111,7 +111,7 @@ nav {
         }
 
         .nav_item {
-            height: 0;
+            max-height: 0;
             overflow: hidden;
 
             img {
@@ -136,7 +136,6 @@ nav {
 
             img {
                 opacity: 1;
-                transition-delay: 0.4s;
                 transition: all 0.4s ease-in-out;
             }
         }
