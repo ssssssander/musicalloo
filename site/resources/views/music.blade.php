@@ -79,8 +79,5 @@
                 </div>
             </div>
         </div>
-
-        @include('partials/toilet')
-
     </main>
 @endsection
