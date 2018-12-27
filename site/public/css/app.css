@@ -163,6 +163,10 @@ main .bolded {
 
 /* Navigation Toilet Roll */
 
+.nav-container {
+  position: relative;
+}
+
 nav {
   position: fixed;
   margin-top: 10vh;
@@ -219,6 +223,10 @@ nav .nav_item img {
   opacity: 0.75;
 }
 
+.bottom-roll {
+  display: none;
+}
+
 @media screen and (min-width: 1200px) {
   nav {
     margin-top: 15vh;
@@ -230,10 +238,25 @@ nav .nav_item img {
   nav {
     margin-top: 0;
     margin-left: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
   }
 
-  .closed img.nav-image {
-    content: url("/graphics/nav2.svg");
+  nav .nav_item img {
+    transition-delay: 0.4s;
+  }
+
+  .bottom-roll {
+    display: block;
+    position: absolute;
+    bottom: -114px;
+    z-index: 110;
+    width: 53px;
+    left: 12px;
+  }
+
+  .closed {
+    max-height: 105px;
   }
 
   .closed #img_tap_div {
@@ -244,11 +267,17 @@ nav .nav_item img {
   }
 
   .closed .nav_item {
-    display: none;
+    height: 0;
+    overflow: hidden;
   }
 
-  .opened img.nav-image {
-    content: url("/graphics/nav.svg");
+  .closed .nav_item img {
+    opacity: 0;
+    transition-delay: 0s;
+  }
+
+  .opened {
+    max-height: 450px;
   }
 
   .opened #img_tap_div {
@@ -260,6 +289,12 @@ nav .nav_item img {
 
   .opened .nav_item {
     display: flex;
+  }
+
+  .opened .nav_item img {
+    opacity: 1;
+    transition-delay: 0.4s;
+    transition: all 0.4s ease-in-out;
   }
 }
 
@@ -534,6 +569,7 @@ form input[type=submit] {
 
 .admin-main ul li a {
   text-decoration: none;
+  color: #0C426D;
 }
 
 .admin-main ul li input {
