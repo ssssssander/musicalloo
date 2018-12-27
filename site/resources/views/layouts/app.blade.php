@@ -33,14 +33,10 @@
    crossorigin=""></script>
 
 </head>
-<body {{ (Request::is('login')) || (Request::is('admin/*')) ? "class=admin-body" : "" }}>
+<body {{ (Request::is('login')) ? "class=admin-body" : "" }}>
     <div id="app">
     @if (Request::is('login'))
         @yield('login')
-    @elseif (Request::is('admin/*'))
-        <div class="admin-main">
-            @yield('admin')
-        </div>
     @else
         @yield('main')
     @endif

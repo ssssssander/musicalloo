@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
 @section('title', 'All your music')
 
-@section('admin')
+@section('content')
     <h1>Music</h1>
     <a class="create-link" href="{{ route('music.create') }}">CREATE</a>
     <ul>
