@@ -1,21 +1,24 @@
-<nav class="closed" id="nav">
-    <img class="nav-image" src="{{ asset('graphics/nav.svg') }}" alt="navigation">
+<div class="nav-container">
+    <nav class="closed" id="nav">
+        <img class="nav-image" src="{{ asset('graphics/nav.svg') }}" alt="navigation">
 
-    <div id="img_tap_div"></div>
+        <div id="img_tap_div"></div>
 
-    <a class="nav_item" href="{{ route('home') }}">
-        <img src="{{ asset('graphics/icons/outlines/home.svg') }}" alt="homeIcon">
-    </a>
-    <a class="nav_item" href="{{ route('music') }}">
-        <img src="{{ asset('graphics/icons/outlines/music_note.svg') }}" alt="musicIcon">
-    </a>
-    <a class="nav_item" href="{{ route('map') }}">
-        <img src="{{ asset('graphics/icons/outlines/marker.svg') }}" alt="markerIcon">
-    </a>
-    <a class="nav_item" href="{{ route('faq') }}">
-        <img src="{{ asset('graphics/icons/outlines/faq.svg') }}" alt="faqIcon">
-    </a>
-    <a class="nav_item" href="{{ route('contact') }}">
-        <img src="{{ asset('graphics/icons/outlines/mail.svg') }}" alt="mailIcon">
-    </a>
-</nav>
+        <a class="nav_item" href="{{ route('home') }}">
+            <img src="{{ asset('graphics/icons/outlines/home.svg') }}" alt="homeIcon">
+        </a>
+        <a class="nav_item" href="{{ route('music') }}">
+            <img src="{{ asset('graphics/icons/outlines/music_note.svg') }}" alt="musicIcon">
+        </a>
+        <a class="nav_item" href="{{ route('map') }}">
+            <img src="{{ asset('graphics/icons/outlines/marker.svg') }}" alt="markerIcon">
+        </a>
+        <a class="nav_item" href="{{ route('faq') }}">
+            <img src="{{ asset('graphics/icons/outlines/faq.svg') }}" alt="faqIcon">
+        </a>
+        <a class="nav_item" href="{{ route('contact') }}">
+            <img src="{{ asset('graphics/icons/outlines/mail.svg') }}" alt="mailIcon">
+        </a>
+    </nav>
+    <img class="bottom-roll" src="{{ asset('graphics/nav2.svg') }}" alt="navigation">
+</div>
