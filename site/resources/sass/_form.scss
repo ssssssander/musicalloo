@@ -15,5 +15,9 @@ form {
 	input:focus, textarea:focus {
 		outline: 0;
 		border-bottom: 2px solid $primary;
-	}
+    }
+
+    input[type=submit] {
+        cursor: pointer;
+    }
 }

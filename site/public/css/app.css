@@ -285,6 +285,10 @@ form textarea:focus {
   border-bottom: 2px solid #A2D8F9;
 }
 
+form input[type=submit] {
+  cursor: pointer;
+}
+
 /* Toilet */
 
 .toilet-wrapper {
@@ -488,6 +492,64 @@ form textarea:focus {
   margin: -20px auto 0;
 }
 
+.admin-nav {
+  position: absolute;
+  top: 0;
+  right: 30px;
+}
+
+.admin-nav li {
+  list-style: none;
+  display: inline-block;
+}
+
+.admin-nav a {
+  text-decoration: none;
+  color: #0C426D;
+}
+
+.admin-main {
+  margin: 50px auto 0;
+  position: relative;
+  max-width: 1000px;
+}
+
+.admin-main ul {
+  list-style: none;
+  padding: 0 40px;
+}
+
+.admin-main ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #000;
+  padding: 10px 0;
+}
+
+.admin-main ul li a {
+  text-decoration: none;
+}
+
+.admin-main ul li input {
+  margin: 0;
+}
+
+.admin-main ul li .crud-space {
+  display: flex;
+  align-items: center;
+}
+
+.admin-main ul li .crud-space a {
+  margin-right: 10px;
+  color: #000;
+}
+
+.admin-main ul li .button {
+  padding: 10px;
+  background-color: #dddddd;
+}
+
 /* --- GENERAL --- */
 
 * {
@@ -549,22 +611,6 @@ body::after {
 .btn:hover {
   background-color: #0C426D;
   transition: all 0.5s;
-}
-
-.admin-nav {
-  position: absolute;
-  top: 0;
-  right: 30px;
-}
-
-.admin-nav li {
-  list-style: none;
-  display: inline-block;
-}
-
-.admin-nav a {
-  text-decoration: none;
-  color: #0C426D;
 }
 
 .create-link {
