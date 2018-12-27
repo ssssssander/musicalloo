@@ -528,6 +528,10 @@ form input[type=submit] {
   padding: 10px 0;
 }
 
+.admin-main ul li:last-child {
+  border-bottom: unset;
+}
+
 .admin-main ul li a {
   text-decoration: none;
 }

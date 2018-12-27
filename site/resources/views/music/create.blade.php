@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
 @section('title', 'Add music')
 
-@section('admin')
+@section('content')
     <h1>Add music</h1>
     <form id="musicset-form" method="POST" action="{{ route('music.store') }}" accept-charset="UTF-8" enctype="multipart/form-data">
         @csrf
