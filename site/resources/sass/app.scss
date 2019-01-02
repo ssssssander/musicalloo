@@ -23,21 +23,21 @@
 body {
 	padding: 0;
     margin: 0;
-    background-color: $primary;
+    // background-color: $primary;
 
 }
 
-body::after {
-  content: "";
-  background: url("/graphics/bg.svg");
-  opacity: 0.08;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
-}
+// body::after {
+//   content: "";
+//   background: url("/graphics/bg.svg");
+//   opacity: 0.08;
+//   top: 0;
+//   left: 0;
+//   bottom: 0;
+//   right: 0;
+//   position: absolute;
+//   z-index: -1;
+// }
 
 .admin-body {
     background-color: #fff;
@@ -85,4 +85,117 @@ body::after {
     position: absolute;
     right: 15px;
     top: 10px;
+}
+
+// onepager
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #707070;
+
+    .content {
+        max-width: 600px;
+    }
+}
+
+.home-section {
+    background-color: #F0F0F0;
+
+    img {
+        height: 50%;
+        max-height: 50%;
+    }
+}
+
+.music-section {
+    background-color: #fff;
+    min-height: calc(100vh - 60px);
+    height: calc(100vh - 60px);
+    padding: 30px 0;
+
+    img {
+        height: 70%;
+        max-height: 70%;
+    }
+
+    .dropdown {
+        width: 600px;
+        border: 1px solid #707070;
+        transition: max-height 0.4s ease-in-out;
+        overflow: hidden;
+        max-height: 60px;
+        margin-bottom: 45px;
+
+        .dropdown-title {
+            padding: 20px;
+        }
+    }
+
+    .dropdown-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 0px solid #C0C0C0;
+    }
+
+    .arrow-down {
+        width: 0;
+        height: 0;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+
+        border-top: 7px solid #707070;
+
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .dd-input:checked + .dropdown {
+        max-height: 500px;
+    }
+
+    .dd-input:checked + .dropdown .dropdown-title {
+        border-bottom: 1px solid #C0C0C0;
+    }
+
+    .dd-input:checked + .dropdown .arrow-down {
+        transform: rotate(-180deg);
+    }
+
+    input[type=checkbox] {
+        display: none;
+    }
+}
+
+.map-section {
+    background-color: #484848;
+    color: #D3D3D3;
+    flex-direction: column;
+
+    #mapid {
+        max-width: 1300px;
+    }
+}
+
+.faq-section {
+    background-color: #F0F0F0;
+
+    img {
+        height: 70%;
+    }
+
+    .content {
+        max-width: 900px;
+    }
+}
+
+.contact-section {
+    img {
+        height: 50%;
+    }
+
+    input[type=text], input[type=email], input[type=textarea] {
+        border: 1px solid #707070;
+    }
 }
