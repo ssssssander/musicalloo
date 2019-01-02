@@ -38,7 +38,9 @@
     @if (Request::is('login'))
         @yield('login')
     @else
-        @yield('main')
+        <div class="content-wrapper">
+            @yield('main')
+        </div>
     @endif
 
     <!-- Admin nav -->
