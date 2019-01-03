@@ -3,7 +3,16 @@
 @section('title', 'Musicalloo')
 
 @section('main')
-    <section class="home-section">
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#music">Music</a>
+        <a href="#map">Map</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+
+    <section class="home-section" id="home">
         <div class="content-wrapper">
         	<div class="image-wrapper">
         	    <img src="{{ asset('graphics/wckot.svg') }}" alt="toilet loft">
@@ -17,7 +26,7 @@
         </div>
     </section>
 
-    <section class="music-section">
+    <section class="music-section" id="music">
         <div class="content-wrapper">
             <div class="content">
                 <h1>What are you listening to?</h1>
@@ -63,14 +72,14 @@
         </div>
     </section>
 
-    <section class="map-section">
+    <section class="map-section" id="map">
         <div class="content-wrapper">
             <h1>Where can you find musicalloo's?</h1>
             <div id="mapid"></div>
         </div>
     </section>
 
-    <section class="faq-section">
+    <section class="faq-section" id="faq">
         <div class="content-wrapper">
             <img src="{{ asset('graphics/wcpapier.svg') }}" alt="toilet paper">
             <div class="content">
@@ -86,7 +95,7 @@
         </div>
     </section>
 
-    <section class="contact-section">
+    <section class="contact-section" id="contact">
         <div class="content-wrapper">
             <div class="content">
                 <h1>Contact</h1>
