@@ -672,6 +672,11 @@ section .content {
   grid-column-end: 12;
 }
 
+.home-section .content p {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
 .music-section {
   background-color: #fff;
   min-height: calc(100vh - 60px);
@@ -691,12 +696,12 @@ section .content {
 }
 
 .music-section .content {
-  grid-row-start: 2;
-  grid-row-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 5;
   grid-column-start: 2;
   grid-column-end: 9;
   justify-self: end;
-  margin-top: -5%;
+  align-self: center;
 }
 
 .music-section .dropdown {
@@ -829,5 +834,77 @@ section .content {
 
 .contact-section form {
   width: 500px;
+}
+
+@media only screen and (max-width: 414px) {
+  .home-section img {
+    display: none;
+  }
+
+  .home-section .content {
+    grid-row-start: 1;
+    grid-row-end: 5;
+    grid-column-start: 2;
+    grid-column-end: 12;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .music-section img {
+    display: none;
+  }
+
+  .music-section .content {
+    grid-row-start: 1;
+    grid-row-end: 5;
+    grid-column-start: 2;
+    grid-column-end: 12;
+    justify-self: center;
+    align-self: center;
+  }
+
+  .music-section .dropdown {
+    width: 100%;
+  }
+
+  .map-section h1 {
+    grid-column-end: 12;
+  }
+
+  .faq-section img {
+    display: none;
+  }
+
+  .faq-section .content {
+    grid-row-start: 1;
+    grid-row-end: 5;
+    grid-column-start: 2;
+    grid-column-end: 12;
+    justify-self: center;
+    align-self: center;
+  }
+
+  .contact-section img {
+    display: none;
+  }
+
+  .contact-section .content {
+    grid-row-start: 1;
+    grid-row-end: 5;
+    grid-column-start: 2;
+    grid-column-end: 12;
+    justify-self: center;
+    align-self: center;
+  }
+
+  .contact-section input[type=text],
+  .contact-section input[type=email],
+  .contact-section input[type=textarea] {
+    width: 84vw;
+  }
+
+  .contact-section form {
+    width: 100%;
+  }
 }
 
