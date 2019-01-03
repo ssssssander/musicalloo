@@ -1,4 +1,4 @@
-@extends('layouts.app')
+<!-- @extends('layouts.app')
 
 @section('main')
     <main class="{{ (Request::is('admin/*')) ? "admin-main py-4" : "py-4" }}">
@@ -9,4 +9,4 @@
             </div>
         </div>
     </main>
-@endsection
+@endsection -->
