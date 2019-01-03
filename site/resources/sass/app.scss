@@ -127,6 +127,11 @@ section {
         grid-row-end: 4;
         grid-column-start: 6;
         grid-column-end: 12;
+
+        p {
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
     }
 }
 
@@ -148,12 +153,12 @@ section {
     }
 
     .content {
-        grid-row-start: 2;
-        grid-row-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 5;
         grid-column-start: 2;
         grid-column-end: 9;
         justify-self: end;
-        margin-top: -5%;
+        align-self: center;
     }
 
     .dropdown {
@@ -285,5 +290,85 @@ section {
 
     form {
         width: 500px;
+    }
+}
+
+@media only screen and (max-width : 414px) {
+    .home-section {
+        img {
+            display: none;
+        }
+
+        .content {
+            grid-row-start: 1;
+            grid-row-end: 5;
+            grid-column-start: 2;
+            grid-column-end: 12;
+            align-self: center;
+            justify-self: center;
+        }
+    }
+
+    .music-section {
+        img {
+            display: none;
+        }
+
+        .content {
+            grid-row-start: 1;
+            grid-row-end: 5;
+            grid-column-start: 2;
+            grid-column-end: 12;
+            justify-self: center;
+            align-self: center;
+        }
+
+        .dropdown {
+            width: 100%;
+        }
+    }
+
+    .map-section {
+        h1 {
+            grid-column-end: 12;
+        }
+    }
+
+    .faq-section {
+        img {
+            display: none;
+        }
+
+        .content {
+            grid-row-start: 1;
+            grid-row-end: 5;
+            grid-column-start: 2;
+            grid-column-end: 12;
+            justify-self: center;
+            align-self: center;
+        }
+    }
+
+    .contact-section {
+        img {
+            display: none;
+        }
+
+        .content {
+            grid-row-start: 1;
+            grid-row-end: 5;
+            grid-column-start: 2;
+            grid-column-end: 12;
+            justify-self: center;
+            align-self: center;
+        }
+
+        input[type=text], input[type=email], input[type=textarea] {
+            width: 84vw;
+        }
+
+        form {
+            width: 100%;
+        }
     }
 }
