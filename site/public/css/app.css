@@ -717,6 +717,10 @@ section .content {
   padding: 20px;
 }
 
+.music-section .dropdown p {
+  padding: 0 20px;
+}
+
 .music-section .dropdown-title {
   display: flex;
   justify-content: space-between;
