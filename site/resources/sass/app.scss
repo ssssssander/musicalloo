@@ -293,9 +293,111 @@ section {
     }
 }
 
+@media only screen and (max-width: 768px) {
+    .home-section {
+        .image-wrapper {
+            width: 41.66667%;
+            padding: 20px;
+        }
+
+        .content-wrapper {
+            display: flex;
+            padding-top: 150px;
+        }
+
+        .content {
+            width: 60%;
+            padding: 0 40px 0 20px;
+
+            h1 {
+                position: absolute;
+                top: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            padding: 20px;
+        }
+    }
+
+    .music-section {
+        img {
+            display: none;
+        }
+
+        .content-wrapper {
+            display: block;
+            padding: 0 20px;
+            width: auto;
+        }
+
+        .content {
+            margin: 0 auto;
+        }
+
+        .dropdown {
+            width: 100%;
+        }
+    }
+
+    .map-section {
+        h1 {
+            grid-column-end: 12;
+        }
+    }
+
+    .faq-section {
+        img {
+            display: none;
+        }
+
+        .content {
+            grid-row-start: 1;
+            grid-row-end: 5;
+            grid-column-start: 2;
+            grid-column-end: 12;
+            justify-self: center;
+            align-self: center;
+        }
+    }
+
+    .contact-section {
+        img {
+            display: none;
+        }
+
+        .content {
+            grid-row-start: 1;
+            grid-row-end: 5;
+            grid-column-start: 2;
+            grid-column-end: 12;
+            justify-self: center;
+            align-self: center;
+        }
+
+        input[type=text], input[type=email], input[type=textarea] {
+            width: 84vw;
+        }
+
+        form {
+            width: 100%;
+        }
+    }
+}
+
 @media only screen and (max-width : 414px) {
     .home-section {
-        img {
+        .content-wrapper {
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33%;
+            grid-template-rows: 25% 25% 25% 25%;
+        }
+
+        .image-wrapper {
             display: none;
         }
 
@@ -306,6 +408,8 @@ section {
             grid-column-end: 12;
             align-self: center;
             justify-self: center;
+            text-align: center;
+            width: 100%;
         }
     }
 
