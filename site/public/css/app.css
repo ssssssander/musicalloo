@@ -210,6 +210,11 @@ input[type=checkbox] {
     align-items: center;
     flex-direction: column;
   }
+
+  .mobile-nav a {
+    font-size: 30px;
+    margin: 10px 0;
+  }
 }
 
 form input,
