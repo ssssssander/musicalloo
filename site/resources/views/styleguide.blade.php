@@ -4,14 +4,22 @@
 
 @section('main')
 
-    <section class="home-section styleguide centered">
+    <div class="styleguide_nav">
+        <p><a href="#styleguide_top">Musicalloo Style Guide</a></p>
+
+        <a href="#basics">The Basics</a>
+        <a href="#cp">Content &amp; Personality</a>
+        <a href="#design">Design</a>
+    </div>
+
+    <section class="home-section styleguide centered" id="styleguide_top">
         <div class="content-wrapper">
             <div class="content">
                 <h1>Musicalloo Style Guide</h1>
 
-                <h3>The Basics</h3>
-                <h3>Content &amp; Personality</h3>
-                <h3>Design</h3>
+                <h3><a href="#basics">The Basics</a></h3>
+                <h3><a href="#cp">Content &amp; Personality</a></h3>
+                <h3><a href="#design">Design</a></h3>
             </div>
         </div>
     </section>
@@ -67,9 +75,6 @@
                 <h4>Overview:</h4>
                 <p>Musicalloo is fun, clean and simple. As one would hope for any toilet (or toilet related) experience to be.</p>
 
-                <h4>Personality Image:</h4>
-                <img src="https://pbs.twimg.com/profile_images/462229452479401984/hu7HTUH7_400x400.jpeg">
-
                 <h4>Braind Traits:</h4>
                 <p>We are simple, easy, accessible, fun, spontaneous and light-hearted.<br>Musicallo is NOT complex or overly serious.</p>
 
@@ -78,6 +83,15 @@
 
                 <h4>Voice:</h4>
                 <p>The voice of our brand is light-hearted and fun, like talking to a young friend. It conveys that we are bringing a little bit of delight in unexpected ways. Be careful not to sound either over-excited or under-excited.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="design" class="home-section styleguide design">
+        <div class="content-wrapper">
+            <div class="content">
+                <h2>Design</h2>
+                <p>Simplicity and consistency are key. <br>By doing this, we strive to be accessible to anyone. <br>If you can write it in less words, do so.</p>
             </div>
         </div>
     </section>
