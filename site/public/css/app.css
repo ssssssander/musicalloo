@@ -691,6 +691,10 @@ section .content {
   display: none;
 }
 
+.music-section .dropdown-content {
+  word-break: break-all;
+}
+
 .map-section {
   background-color: #484848;
   color: #D3D3D3;

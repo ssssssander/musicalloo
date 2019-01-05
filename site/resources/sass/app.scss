@@ -211,6 +211,10 @@ section {
     input[type=checkbox] {
         display: none;
     }
+
+    .dropdown-content {
+        word-break: break-all;
+    }
 }
 
 .map-section {
