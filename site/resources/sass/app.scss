@@ -212,6 +212,10 @@ section {
     input[type=checkbox] {
         display: none;
     }
+
+    .dropdown-content {
+        word-break: break-all;
+    }
 }
 
 .map-section {
@@ -316,7 +320,7 @@ section {
 
             h1 {
                 position: absolute;
-                top: 30px;
+                top: 50px;
                 left: 50%;
                 transform: translateX(-50%);
             }

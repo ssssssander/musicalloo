@@ -3,6 +3,7 @@
 @section('title', 'Musicalloo')
 
 @section('main')
+
     @include('partials.nav')
 
     <section class="home-section" id="home">
@@ -46,6 +47,16 @@
                 echo 'marker' . $marker->id . '.bindPopup("<b>' . $marker->name . '</b><br>' . $marker->address . '");';
             }
         ?>
+
+    </script>
+
+    <script>
+        var mobileNav = document.querySelectorAll('.mobile-nav a');
+        var navCheckbox = document.getElementById('nav-checkbox');
+
+        mobileNav.forEach(element => {
+            element.onclick = function() { navCheckbox.checked = false };
+        });
 
     </script>
 @endsection
