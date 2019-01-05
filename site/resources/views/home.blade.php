@@ -12,6 +12,7 @@
     </nav>
 
     <label class="burger-menu">
+        <img src="{{ asset('graphics/bars-solid.svg') }}" alt="menu">
         <input type="checkbox" id="nav-checkbox" class="checkbox-input">
         <nav class="mobile-nav">
             <a href="#home">Home</a>
