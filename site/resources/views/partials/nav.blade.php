@@ -1,24 +1,7 @@
-<div class="nav-container">
-    <nav class="closed" id="nav">
-        <img class="nav-image" src="{{ asset('graphics/nav.svg') }}" alt="navigation">
-
-        <div id="img_tap_div"></div>
-
-        <a class="nav_item" href="{{ route('home') }}">
-            <img src="{{ asset('graphics/icons/outlines/home.svg') }}" alt="homeIcon">
-        </a>
-        <a class="nav_item" href="{{ route('music') }}">
-            <img src="{{ asset('graphics/icons/outlines/music_note.svg') }}" alt="musicIcon">
-        </a>
-        <a class="nav_item" href="{{ route('map') }}">
-            <img src="{{ asset('graphics/icons/outlines/marker.svg') }}" alt="markerIcon">
-        </a>
-        <a class="nav_item" href="{{ route('faq') }}">
-            <img src="{{ asset('graphics/icons/outlines/faq.svg') }}" alt="faqIcon">
-        </a>
-        <a class="nav_item" href="{{ route('contact') }}">
-            <img src="{{ asset('graphics/icons/outlines/mail.svg') }}" alt="mailIcon">
-        </a>
-    </nav>
-    <img class="bottom-roll" src="{{ asset('graphics/nav2.svg') }}" alt="navigation">
-</div>
+<nav>
+    <a href="#home">Home</a>
+    <a href="#music">Music</a>
+    <a href="#map">Map</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+</nav>
