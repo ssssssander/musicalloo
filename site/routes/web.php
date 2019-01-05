@@ -16,10 +16,9 @@ Auth::routes();
 Route::get('/', 'HomeController@home')->name('home');
 Route::redirect('/home', '/');
 
-Route::get('/music', 'HomeController@music')->name('music');
-Route::get('/map', 'HomeController@map')->name('map');
-Route::get('/faq', 'HomeController@faq')->name('faq');
-Route::get('/contact', 'HomeController@contact')->name('contact');
+Route::get('/styleguide', function() {
+	return view('styleguide');
+});
 
 Route::middleware(['auth'])->prefix('/admin')->group(function() {
     Route::resource('music', 'MusicController');
