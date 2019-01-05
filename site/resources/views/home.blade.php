@@ -11,6 +11,17 @@
         <a href="#contact">Contact</a>
     </nav>
 
+    <label class="burger-menu">
+        <input type="checkbox" id="nav-checkbox" class="checkbox-input">
+        <nav class="mobile-nav">
+            <a href="#home">Home</a>
+            <a href="#music">Music</a>
+            <a href="#map">Map</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </label>
+
 
     <section class="home-section" id="home">
         <div class="content-wrapper">
@@ -122,7 +133,6 @@
 		    accessToken: '{{ env('MAPBOX_TOKEN') }}'
 		}).addTo(mymap);
 
-
 		// <?php
 		// 	foreach($markers as $marker)
 		// 	{
@@ -132,5 +142,15 @@
 		// 	}
 		// ?>
 
-	</script>
+    </script>
+
+    <script>
+        var mobileNav = document.querySelectorAll('.mobile-nav a');
+        var navCheckbox = document.getElementById('nav-checkbox');
+
+        mobileNav.forEach(element => {
+            element.onclick = function() { navCheckbox.checked = false };
+        });
+
+    </script>
 @endsection
