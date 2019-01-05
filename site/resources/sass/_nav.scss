@@ -60,5 +60,10 @@ input[type=checkbox] {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+
+        a {
+            font-size: 30px;
+            margin: 10px 0;
+        }
     }
 }
