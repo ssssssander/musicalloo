@@ -44,14 +44,14 @@ section.styleguide {
 		display: block;
 		background-color: #F0F0F0;
 		padding: $size_s;
-		border: 1px solid $grey;
+		border: 1px solid $dark_grey;
 		box-sizing: border-box;
 
 		transition: all .25s;
 	}
 
 	h3 a:hover {
-		background-color: $grey;
+		background-color: $dark_grey;
 		color: #F0F0F0;
 		cursor: pointer;
 
@@ -104,7 +104,7 @@ section.styleguide.basics {
 
 		.goal_borders {
 			padding: $size_s $size_m;
-			border: 1px solid $grey;
+			border: 1px solid $dark_grey;
 			box-sizing: border-box;
 		}
 	}
