@@ -39,6 +39,8 @@
             </label>
         </div>
 
-        <img src="{{ asset('graphics/wcborstel.svg') }}" alt="toilet brush">
+        <div class="image-wrapper">
+            <img src="{{ asset('graphics/wcborstel.svg') }}" alt="toilet brush">
+        </div>
     </div>
 </section>

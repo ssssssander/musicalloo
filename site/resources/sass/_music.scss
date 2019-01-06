@@ -1,59 +1,88 @@
-.category h3 {
-	position: relative;
-	padding: $size_xs;
-	margin-bottom: 0;
-	background-color: $secondary;
-	color: $light_grey;
-	cursor: pointer;
-}
+.music-section {
+    background-color: #fff;
+    min-height: calc(100vh - 60px);
+    height: calc(100vh - 60px);
+    padding: 30px 0;
 
-.music_list {
-	background-color: $primary;
-    margin-top: 0;
-    transition: all 0.4s ease-in-out;
-    overflow: hidden;
-
-	h4 {
-		display: inline-block;
-		margin-bottom: 0;
-		border-bottom: 1px solid $grey;
-	}
-
-	p {
-		margin-top: 0;
+    img {
+        height: 70%;
+        max-height: 70%;
     }
 
-    .music_list_item {
-        padding: 0 $size_xs;
+    .content {
+        grid-row-start: 2;
+        grid-row-end: 5;
+        grid-column-start: 2;
+        grid-column-end: 8;
+
+        max-width: 1000px;
     }
-}
 
-.closed .music_list {
-	max-height: 0;
-}
+    .image-wrapper {
+        grid-row-start: 1;
+        grid-row-end: 5;
+        grid-column-start: 9;
+        grid-column-end: 12;
 
-.opened .music_list {
-	max-height: 500px;
-}
+        padding-top: $size_xl;
+    }
 
-.arrow_container {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	width: 50px;
-	padding-top: 15px;
+    label {
+        display: block;
+    }
 
-	.arrow1, .arrow2 {
-		position: absolute;
-		width: 4px;
-		height: 15px;
-		background-color: $light_grey;
-		transform: rotate(-45deg);
-	}
+    .dropdown {
+        width: 100%;
+        border: 1px solid $dark_grey;
+        transition: max-height 0.4s ease-in-out;
+        overflow: hidden;
+        max-height: 60px;
+        margin-bottom: 45px;
 
-	.arrow2 {
-		left: 8px;
-		transform: rotate(45deg);
-	}
+        .dropdown-title {
+            padding: 20px;
+        }
+
+        p {
+            padding: 0 20px;
+        }
+    }
+
+    .dropdown-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 0px solid #C0C0C0;
+    }
+
+    .arrow-down {
+        width: 0;
+        height: 0;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+
+        border-top: 7px solid #707070;
+
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .dd-input:checked + .dropdown {
+        max-height: 500px;
+    }
+
+    .dd-input:checked + .dropdown .dropdown-title {
+        border-bottom: 1px solid #C0C0C0;
+    }
+
+    .dd-input:checked + .dropdown .arrow-down {
+        transform: rotate(-180deg);
+    }
+
+    input[type=checkbox] {
+        display: none;
+    }
+
+    .dropdown-content {
+        word-break: break-all;
+    }
 }
