@@ -1,20 +1,21 @@
 nav {
-    position: absolute;
+    position: fixed;
     width: 80vw;
     left: 50%;
     transform: translateX(-50%);
     margin-top: 20px;
     word-spacing: 25px;
+    z-index: 10;
 
     a {
         text-decoration: none;
-        color: #555;
+        color: #707070;
         cursor: pointer;
         padding-bottom: 5px;
     }
 
     a:hover {
-        border-bottom: 1px solid #555;
+        border-bottom: 1px solid #707070;
     }
 }
 
