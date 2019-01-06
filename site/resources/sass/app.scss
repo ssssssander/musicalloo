@@ -471,8 +471,14 @@ section {
     }
 
     .music-section {
+        height: 100%;
+
         img {
             display: none;
+        }
+
+        .content-wrapper {
+            min-height: calc(100vh - 120px);
         }
 
         .content {
