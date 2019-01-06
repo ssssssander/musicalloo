@@ -335,24 +335,36 @@ section {
 @media only screen and (max-width: 768px) {
     .home-section {
         .image-wrapper {
-            width: 41.66667%;
-            padding: 20px;
+            // width: 41.66667%;
+            padding: 10px 0 70px;
+            grid-column-start: 2;
+            grid-column-end: 12;
+            grid-row-start: 3;
+            grid-row-end: 5;
         }
 
         .content-wrapper {
-            display: flex;
-            padding-top: 150px;
+            // display: flex;
+            // padding-top: 150px;
         }
 
         .content {
-            width: 60%;
+            width: 75%;
             padding: 0 40px 0 20px;
+            margin-top: 20px;
+            grid-row-start: 1;
+            grid-row-end: 3;
+            grid-column-start: 2;
+            grid-column-end: 12;
+            align-self: center;
+            justify-self: center;
 
             h1 {
-                position: absolute;
-                top: 50px;
-                left: 50%;
-                transform: translateX(-50%);
+                // position: absolute;
+                // top: 50px;
+                // left: 50%;
+                // transform: translateX(-50%);
+                text-align: center;
             }
 
             padding: 20px;
@@ -382,6 +394,12 @@ section {
     .map-section {
         h1 {
             grid-column-end: 12;
+            align-self: center;
+        }
+
+        #mapid {
+            margin-top: -40px;
+            height: 85%;
         }
     }
 
@@ -424,7 +442,7 @@ section {
     }
 }
 
-@media only screen and (max-width : 414px) {
+@media only screen and (max-width : 415px) {
     .home-section {
         .content-wrapper {
             width: 100%;
