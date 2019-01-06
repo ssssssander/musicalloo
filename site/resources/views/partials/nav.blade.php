@@ -1,4 +1,4 @@
-<nav>
+<nav id="navbar">
     <a href="#home">Home</a>
     <a href="#music">Music</a>
     <a href="#map">Map</a>
