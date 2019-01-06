@@ -2,10 +2,10 @@
     <div class="content-wrapper">
         <div class="content">
             <h1>Talk to us</h1>
-            <form action="">
+            <form action="" id="contact-form">
                 <input type="text" placeholder="Name">
                 <input type="email" placeholder="Email">
-                <input type="textarea" placeholder="Message">
+                <textarea form="contact-form" placeholder="Message"></textarea>
                 <button type="submit">Send</button>
             </form>
         </div>

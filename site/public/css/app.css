@@ -146,24 +146,25 @@ main .bolded {
 }
 
 nav {
-  position: absolute;
+  position: fixed;
   width: 80vw;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   margin-top: 20px;
   word-spacing: 25px;
+  z-index: 10;
 }
 
 nav a {
   text-decoration: none;
-  color: #555;
+  color: #707070;
   cursor: pointer;
   padding-bottom: 5px;
 }
 
 nav a:hover {
-  border-bottom: 1px solid #555;
+  border-bottom: 1px solid #707070;
 }
 
 .burger-menu {
@@ -174,14 +175,24 @@ input[type=checkbox] {
   display: none;
 }
 
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 415px) {
+  .leaflet-bottom,
+  .leaflet-pane {
+    z-index: 7 !important;
+  }
+
+  .leaflet-top {
+    z-index: 8 !important;
+  }
+
   .burger-menu {
     display: block;
-    position: absolute;
+    position: fixed;
     right: 20px;
     top: 20px;
     height: 25px;
     width: 25px;
+    z-index: 9;
   }
 
   nav {
@@ -947,13 +958,13 @@ body {
 }
 
 section {
-  height: 100vh;
+  min-height: 100vh;
   color: #707070;
 }
 
 section .content-wrapper {
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   max-width: 1400px;
   margin: 0 auto;
   display: grid;
@@ -963,6 +974,10 @@ section .content-wrapper {
 
 section .content {
   max-width: 600px;
+}
+
+section p {
+  text-align: justify;
 }
 
 .home-section {
@@ -1104,11 +1119,13 @@ section .content {
 
 .faq-section {
   background-color: #F0F0F0;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .faq-section img {
   height: 70%;
-  grid-column-start: 3;
+  grid-column-start: 2;
   grid-column-end: 5;
   grid-row-start: 1;
   grid-row-end: 5;
@@ -1124,6 +1141,7 @@ section .content {
   grid-column-end: 12;
   align-self: center;
   justify-self: center;
+  padding-right: 20px;
 }
 
 .faq-section .content h1 {
@@ -1151,42 +1169,74 @@ section .content {
 
 .contact-section input[type=text],
 .contact-section input[type=email],
-.contact-section input[type=textarea] {
+.contact-section textarea {
   border: 1px solid #707070;
   width: 100%;
+}
+
+.contact-section textarea:focus {
+  border: 1px solid #707070;
 }
 
 .contact-section form {
   width: 500px;
 }
 
-@media only screen and (max-width: 768px) {
-  .home-section .image-wrapper {
-    width: 41.66667%;
-    padding: 20px;
-  }
+.contact-section button {
+  outline: none;
+  height: 40px;
+  text-align: center;
+  width: 130px;
+  background: #fff;
+  border: 1px solid #1e8dcd;
+  color: #1e8dcd;
+  letter-spacing: 1px;
+  text-shadow: 0;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
 
-  .home-section .content-wrapper {
-    display: flex;
-    padding-top: 150px;
+.contact-section button:hover {
+  color: white;
+  background: #1e8dcd;
+}
+
+@media only screen and (max-width: 769px) {
+  .home-section .image-wrapper {
+    padding: 10px 0 70px;
+    grid-column-start: 2;
+    grid-column-end: 12;
+    grid-row-start: 3;
+    grid-row-end: 5;
   }
 
   .home-section .content {
-    width: 60%;
+    width: 75%;
     padding: 0 40px 0 20px;
+    margin-top: 20px;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 12;
+    align-self: center;
+    justify-self: center;
     padding: 20px;
   }
 
   .home-section .content h1 {
-    position: absolute;
-    top: 50px;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    text-align: center;
+  }
+
+  .home-section .content p {
+    text-align: justify;
   }
 
   .music-section img {
-    display: none;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    height: 50vh;
+    margin-top: -150px;
   }
 
   .music-section .content-wrapper {
@@ -1205,6 +1255,12 @@ section .content {
 
   .map-section h1 {
     grid-column-end: 12;
+    align-self: center;
+  }
+
+  .map-section #mapid {
+    margin-top: -40px;
+    height: 85%;
   }
 
   .faq-section img {
@@ -1218,6 +1274,10 @@ section .content {
     grid-column-end: 12;
     justify-self: center;
     align-self: center;
+  }
+
+  .faq-section .content p {
+    text-align: justify;
   }
 
   .contact-section img {
@@ -1244,7 +1304,7 @@ section .content {
   }
 }
 
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 415px) {
   .home-section .content-wrapper {
     width: 100%;
     height: 100%;
@@ -1270,8 +1330,16 @@ section .content {
     width: 100%;
   }
 
+  .music-section {
+    height: 100%;
+  }
+
   .music-section img {
     display: none;
+  }
+
+  .music-section .content-wrapper {
+    min-height: calc(100vh - 120px);
   }
 
   .music-section .content {
@@ -1319,12 +1387,27 @@ section .content {
 
   .contact-section input[type=text],
   .contact-section input[type=email],
-  .contact-section input[type=textarea] {
+  .contact-section textarea {
     width: 84vw;
+  }
+
+  .contact-section textarea {
+    border: 1px solid #707070;
+    max-width: 84vw;
+  }
+
+  .contact-section textarea:focus {
+    border: 1px solid #707070;
   }
 
   .contact-section form {
     width: 100%;
+  }
+}
+
+@media only screen and (max-height: 570px) {
+  .map-section #mapid {
+    margin-top: 0px;
   }
 }
 

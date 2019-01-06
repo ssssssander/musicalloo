@@ -1,20 +1,21 @@
 nav {
-    position: absolute;
+    position: fixed;
     width: 80vw;
     left: 50%;
     transform: translateX(-50%);
     margin-top: 20px;
     word-spacing: 25px;
+    z-index: 10;
 
     a {
         text-decoration: none;
-        color: #555;
+        color: #707070;
         cursor: pointer;
         padding-bottom: 5px;
     }
 
     a:hover {
-        border-bottom: 1px solid #555;
+        border-bottom: 1px solid #707070;
     }
 }
 
@@ -26,14 +27,23 @@ input[type=checkbox] {
     display: none;
 }
 
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 415px) {
+    .leaflet-bottom, .leaflet-pane {
+        z-index: 7 !important;
+    }
+
+    .leaflet-top {
+        z-index: 8 !important;
+    }
+
     .burger-menu {
         display: block;
-        position: absolute;
+        position: fixed;
         right: 20px;
         top: 20px;
         height: 25px;
         width: 25px;
+        z-index: 9;
     }
 
     nav {
