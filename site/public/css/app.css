@@ -962,7 +962,7 @@ section .content {
   background: #1e8dcd;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 769px) {
   .home-section .image-wrapper {
     padding: 10px 0 70px;
     grid-column-start: 2;
@@ -986,6 +986,10 @@ section .content {
 
   .home-section .content h1 {
     text-align: center;
+  }
+
+  .home-section .content p {
+    text-align: justify;
   }
 
   .music-section img {
@@ -1027,6 +1031,10 @@ section .content {
     grid-column-end: 12;
     justify-self: center;
     align-self: center;
+  }
+
+  .faq-section .content p {
+    text-align: justify;
   }
 
   .contact-section img {
@@ -1151,6 +1159,12 @@ section .content {
 
   .contact-section form {
     width: 100%;
+  }
+}
+
+@media only screen and (max-height: 570px) {
+  .map-section #mapid {
+    margin-top: 0px;
   }
 }
 
