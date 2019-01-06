@@ -1079,8 +1079,16 @@ section .content {
     width: 100%;
   }
 
+  .music-section {
+    height: 100%;
+  }
+
   .music-section img {
     display: none;
+  }
+
+  .music-section .content-wrapper {
+    min-height: calc(100vh - 120px);
   }
 
   .music-section .content {
