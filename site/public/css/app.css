@@ -369,15 +369,16 @@ form input[type=submit] {
 }
 
 .contact-section button {
+  display: block;
   outline: none;
-  height: 40px;
   text-align: center;
-  width: 130px;
+  width: auto;
+  padding: 10px 25px;
+  margin: 10px 0;
   background: #fff;
   border: 1px solid #6C94B7;
   color: #6C94B7;
   letter-spacing: 1px;
-  text-shadow: 0;
   font-size: 16px;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -386,6 +387,16 @@ form input[type=submit] {
 .contact-section button:hover {
   color: white;
   background: #6C94B7;
+}
+
+.contact-section button.blue_btn {
+  background: #6C94B7;
+  color: #fff;
+}
+
+.contact-section button.green_btn {
+  background: #6E9683;
+  color: #fff;
 }
 
 /* Toilet */
@@ -741,6 +752,19 @@ section.styleguide.basics,
   background-color: #fff;
 }
 
+section.styleguide.basics .image-wrapper,
+#basics .image-wrapper {
+  grid-row-start: 2;
+  grid-row-end: 4;
+  grid-column-start: 3;
+  grid-column-end: 6;
+}
+
+section.styleguide.basics .content,
+#basics .content {
+  margin-left: 25px;
+}
+
 section.styleguide.basics .content {
   grid-row-start: 1;
   grid-column-start: 3;
@@ -761,11 +785,20 @@ section.styleguide.basics .content.goal_div .goal_borders {
   box-sizing: border-box;
 }
 
+section.styleguide.basics .content.goal_div .goal_borders {
+  margin-right: 50px;
+}
+
+section.styleguide.basics .content.goal_div .goal_borders.second {
+  margin-right: 0;
+  margin-left: 50px;
+}
+
 section.styleguide.basics .content.goal_div:last-child {
   grid-row-start: 2;
   grid-row-end: 3;
-  grid-column-start: 8;
-  grid-column-end: 12;
+  grid-column-start: 7;
+  grid-column-end: 11;
 }
 
 section.styleguide.cp {
@@ -820,7 +853,7 @@ section.styleguide.design .content.title {
   grid-row-end: 2;
   grid-column-start: 1;
   grid-column-end: 13;
-  padding-top: 50px;
+  padding-top: 75px;
 }
 
 section.styleguide.design .image-wrapper.logo {
@@ -833,22 +866,23 @@ section.styleguide.design .image-wrapper.logo {
 section.styleguide.design .content.title2 {
   grid-row-start: 3;
   grid-row-end: 4;
-  padding-top: 100px;
+  padding-top: 0;
 }
 
 section.styleguide.design .image-wrapper.logo2 {
-  grid-row-start: 4;
+  grid-row-start: 3;
   grid-row-end: 5;
   grid-column-start: 2;
   grid-column-end: 12;
+  padding-top: 120px;
   text-align: center;
 }
 
 section.styleguide.design .image-wrapper.logo2 img {
   display: inline-block;
   width: auto;
-  height: 50%;
-  padding: 0 25px;
+  height: 120px;
+  padding: 0 10px;
 }
 
 section.styleguide.design_colors .color_div {
@@ -966,6 +1000,69 @@ section.styleguide.spacing .image-wrapper img {
   height: 250px;
 }
 
+section.styleguide.forms input[type=text],
+section.styleguide.forms input[type=email],
+section.styleguide.forms textarea {
+  border: 1px solid #484848;
+  width: 100%;
+}
+
+section.styleguide.forms input:focus,
+section.styleguide.forms textarea:focus {
+  border: 1px solid #6C94B7;
+}
+
+section.styleguide.forms form {
+  width: 600px;
+  padding-top: 25px;
+}
+
+section.styleguide.forms button {
+  outline: none;
+  text-align: center;
+  width: 50%;
+  padding: 10px 25px;
+  margin: 10px 0;
+  margin-left: 25%;
+  background: #F0F0F0;
+  border: 1px solid #6C94B7;
+  color: #6C94B7;
+  letter-spacing: 1px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+section.styleguide.forms button:hover {
+  color: #F0F0F0;
+  background: #6C94B7;
+}
+
+section.styleguide.forms button.blue_btn {
+  background: #6C94B7;
+  color: #F0F0F0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+section.styleguide.forms button.blue_btn:hover {
+  color: #6C94B7;
+  background: #F0F0F0;
+}
+
+section.styleguide.forms button.green_btn {
+  background: #6E9683;
+  color: #F0F0F0;
+  border: 1px solid #6E9683;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+section.styleguide.forms button.green_btn:hover {
+  color: #6E9683;
+  background: #F0F0F0;
+}
+
 @media only screen and (max-width: 1000px) {
   .styleguide_nav {
     width: 200px;
@@ -1011,6 +1108,12 @@ section.styleguide.spacing .image-wrapper img {
     grid-column-end: 12;
   }
 
+  section.styleguide.basics .content.goal_div .goal_borders,
+  section.styleguide.basics .content.goal_div .goal_borders.second {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
   section.styleguide.design .content {
     grid-row-start: 1;
     padding-top: 75px;
@@ -1033,6 +1136,13 @@ section.styleguide.spacing .image-wrapper img {
 
   section.styleguide.design .content h3:nth-child(odd) {
     margin: 10px auto;
+  }
+
+  section.styleguide.forms form,
+  section.styleguide.forms button {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
