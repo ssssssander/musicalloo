@@ -54,7 +54,7 @@
             </div>
             
             <div class="content goal_div">
-                <div class="goal_borders">
+                <div class="goal_borders second">
                     <p><strong>Marketing Stunt</strong></p>
                     <p>Secondly, Musicalloo can be used for marketing. And example situation could be a theater, where the toilets can play songs which will immediately remind visitors of certain movies, without seeming like advertisement at all.</p>
                 </div>
@@ -79,7 +79,7 @@
                 <h4>Overview:</h4>
                 <p>Musicalloo is fun, clean and simple. As one would hope for any toilet (or toilet related) experience to be.</p>
 
-                <h4>Braind Traits:</h4>
+                <h4>Brand Traits:</h4>
                 <p>We are simple, easy, accessible, fun, spontaneous and light-hearted.<br>Musicallo is NOT complex or overly serious.</p>
 
                 <h4>Personality Map:</h4>
@@ -246,9 +246,13 @@
             <div class="content title">
                 <h4>Design: Forms</h4>
 
-                <p>As Musicalloo prefers a minimalistic appearance, spacing is very important. Large spacing is generally preferred over cramped spacing.</p>
-                <p>When positioning illustrations next to text, always maintain enough spacing to provide good readability.</p>
-                <p>The logo should have roughly its own width around it for "breathing room".</p>
+                <form id="contact-form">
+                    <input type="text" placeholder="Keep it simple">
+                    <textarea form="contact-form" placeholder="Keep it clear"></textarea>
+                    <button type="submit">and add</button>
+                    <button type="submit" class="blue_btn">a colorful</button>
+                    <button type="submit" class="green_btn">button!</button>
+                </form>
             </div>
         </div>
     </section>
