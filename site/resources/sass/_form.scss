@@ -21,3 +21,69 @@ form {
         cursor: pointer;
     }
 }
+
+.contact-section {
+    img {
+        height: 50%;
+        grid-column-start: 9;
+        grid-column-end: 12;
+        grid-row-start: 1;
+        grid-row-end: 5;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .content {
+        grid-row-start: 2;
+        grid-row-end: 4;
+        grid-column-start: 2;
+        grid-column-end: 8;
+    }
+
+    input[type=text], input[type=email], textarea {
+        border: 1px solid $dark_grey;
+        width: 100%;
+    }
+
+    input:focus, textarea:focus {
+        border: 1px solid $blue;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    button {
+        display: block;
+        outline:none;
+        text-align: center;
+        width: auto;
+        padding: $size_xs $size_s;
+        margin: $size_xs 0;
+        background: $white;
+        border: 1px solid $blue;
+        color:$blue;
+        letter-spacing: 1px;
+
+        font: {
+          size: 16px;
+        }
+
+        cursor: pointer;
+        transition: all 0.25s ease;
+        &:hover {
+          color:white;
+          background: $blue;
+        }
+    }
+
+    button.blue_btn {
+        background: $blue;
+        color: $white;
+    }
+
+    button.green_btn {
+        background: $green;
+        color: $white;
+    }
+}

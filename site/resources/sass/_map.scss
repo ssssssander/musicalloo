@@ -12,3 +12,29 @@
  	flex-direction: column;
  	align-items: center;
 }
+
+.map-section {
+    background-color: $dark_grey;
+    color: $light_grey;
+    flex-direction: column;
+
+    h1 {
+        grid-column-start: 2;
+        grid-column-end: 7;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        justify-self: left;
+        align-self: end;
+    }
+
+    #mapid {
+        max-width: 1300px;
+        grid-column-start: 2;
+        grid-column-end: 12;
+        grid-row-start: 2;
+        grid-row-end: 5;
+        justify-self: center;
+        align-self: start;
+        margin: 0;
+    }
+}

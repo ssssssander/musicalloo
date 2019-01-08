@@ -9,32 +9,8 @@ class HomeController extends Controller
 {
     public function home()
     {
-        return view('home');
-    }
-
-
-    public function music()
-    {
-        return view('music');
-    }
-
-
-    public function map()
-    {
         $markers = Marker::all();
 
-        return view('map', compact('markers'));
-    }
-
-
-    public function faq()
-    {
-        return view('faq');
-    }
-
-
-    public function contact()
-    {
-        return view('contact');
+        return view('home', compact('markers'));
     }
 }
