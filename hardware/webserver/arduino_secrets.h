@@ -1,2 +1,0 @@
-#define SECRET_SSID "WiFi-2.4-84F7"
-#define SECRET_PASS "BA4E9071E9"
