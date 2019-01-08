@@ -4,6 +4,13 @@
  * MOSI - pin 11
  * MISO - pin 12
  * CLK - pin 13
+ * 
+ * File naming format: [number]-part/full-[optionaltext]
+ * So for the first audio file to be played that is one instrument: 1-part-mysong or just 1-part
+ * For the first full song: 1-full
+ * For the second audio file to be played that is one instrument: 2-part
+ * For the second full song: 2-full
+ * Etc
  */
 
 #include <SD.h>
@@ -16,9 +23,11 @@
 #define ECHO1 7
 #define TRIG2 6
 #define ECHO2 5
-#define SAMPLING_RATE 16000
-#define MAX_NR_OF_FILES 10
-#define DELIMITER '-'
+#define SAMPLING_RATE 16000 // Change according to the sampling rate, 16000 is best for playing via Arduino (used to determine audio length in seconds)
+#define MAX_NR_OF_FILES 6 // You can increase this number but be aware of the Arduino's memory
+#define MAX_FILE_NAME_LENGTH 12 // 8.3 filenames (12 chars)
+#define DELIMITER1 '-'
+#define DELIMITER2 '.'
 
 TMRpcm music;
 File musicFile;
@@ -37,8 +46,10 @@ int fileCounter = 0;
 int currentMusicNr = 1;
 String currentPartAudio;
 String currentFullAudio;
-char currentPartAudioChar[20];
-char currentFullAudioChar[20];
+char currentPartAudioChar[MAX_FILE_NAME_LENGTH];
+char currentFullAudioChar[MAX_FILE_NAME_LENGTH];
+bool checkPart = false;
+bool checkFull = false;
 
 void setup() {
   Serial.begin(9600);
@@ -50,25 +61,25 @@ void setup() {
   pinMode(SPEAKER1, OUTPUT);
 
   music.speakerPin = SPEAKER1;
-  music.loop(1);  
+  music.loop(0);  
   
   Serial.print("Initializing SD card...");
 
   if (!SD.begin(4)) {
-    Serial.println("initialization failed!");
+    Serial.println("Initialization failed");
     while (1);
   }
-  Serial.println("initialization done.");
+  Serial.println("Initialization done");
 
   root = SD.open("/");
   getFileNames(root);
+  root.close();
 
   music.quality(0);
   music.setVolume(6); // 0 to 7
 
   nextSong();
 }
-
 
 void loop() {
   unsigned long currentMillis = millis();
@@ -83,7 +94,7 @@ void loop() {
   
   if ((distance1 <= 15) && (distance2 <= 15)) {
     if (!playingAudio2) {
-      music.pause();
+      music.pause(); // This function will unpause when playback is stopped
       music.play(currentFullAudioChar, seconds);
       
       playingAudio1 = false;
@@ -93,7 +104,7 @@ void loop() {
   }
   else if ((distance1 <= 15) || (distance2 <= 15)) {
     if (!playingAudio1) {
-      music.pause();
+      music.pause(); // This function will unpause when playback is stopped
       music.play(currentPartAudioChar, seconds);
       
       playingAudio1 = true;
@@ -160,8 +171,7 @@ void getFileNames(File dir) {
   while (true) {
     File entry =  dir.openNextFile();
     if (!entry) {
-      // no more files
-      break;
+      break; // No more files
     }
     
     if (!entry.isDirectory()) {
@@ -172,36 +182,54 @@ void getFileNames(File dir) {
     }
     
     entry.close();
+    
     fileCounter++;
   }
 }
 
 void nextSong() {
-  for (int i = 0; i < MAX_NR_OF_FILES; i++) {
-    int nr = split(fileNames[i], DELIMITER, 0).toInt();
-    String type = split(fileNames[i], DELIMITER, 1);
+  for (int i = 0; i < MAX_NR_OF_FILES + 1; i++) {
+    int nr = split(fileNames[i], DELIMITER1, 0).toInt();
+    String type = split(fileNames[i], DELIMITER2, 0);
+    type = split(type, DELIMITER1, 1);
     
-    Serial.println("nr");
+    Serial.println("Nr:");
     Serial.println(nr);
-    Serial.println("type");
+    Serial.println("Type:");
     Serial.println(type);
     
     if (nr == currentMusicNr) {
-      if (type == "P") {
+      if (type == "PART") {
         currentPartAudio = fileNames[i];
+        checkPart = true;
+        Serial.println("Found part");
       }
-      if (type == "F") {
+      if (type == "FULL") {
         currentFullAudio = fileNames[i];
-        break;
+        checkFull = true;
+        Serial.println("Found full");
       }
     }
-  }
 
+    if (checkPart && checkFull) {
+      Serial.println("Breaking from loop");
+      break;
+    }
+  }
+  
+  currentPartAudio.toLowerCase();
   currentFullAudio.toLowerCase();
+  
+  playingAudio1 = playingAudio2 = false;
+  
+  music.disable();
+  delay(100);
+  
   musicFile = SD.open(currentFullAudio);
   musicLength = musicFile.size() / SAMPLING_RATE;
-  currentPartAudio.toCharArray(currentPartAudioChar, 20);
-  currentFullAudio.toCharArray(currentFullAudioChar, 20);
+  currentPartAudio.toCharArray(currentPartAudioChar, MAX_FILE_NAME_LENGTH);
+  currentFullAudio.toCharArray(currentFullAudioChar, MAX_FILE_NAME_LENGTH);
+  
   Serial.print("Song ");
   Serial.println(currentMusicNr);
   Serial.print("Part name: ");
@@ -211,4 +239,8 @@ void nextSong() {
   Serial.print("Length: ");
   Serial.print(musicLength);
   Serial.println(" seconds");
+
+  musicFile.close();
+
+  checkPart = checkFull = false;
 }
