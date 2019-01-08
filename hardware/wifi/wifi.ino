@@ -23,6 +23,10 @@
 
 #include <SPI.h>
 #include <WiFiNINA.h>
+#include <SD.h>
+// #include <Wire.h>
+
+File myFile;
 
 #include "arduino_secrets.h"      // enter WiFi SSID and WiFi password in this file (use arduino_secrets.example.h as example)
 char ssid[] = SECRET_SSID;        // your network SSID (name)
@@ -42,11 +46,25 @@ String result;
 WiFiClient client;
 
 void setup() {
+  // Wire.begin();
+  
   //Initialize serial and wait for port to open:
   Serial.begin(9600);
   while (!Serial) {
     ; // wait for serial port to connect. Needed for native USB port only
   }
+
+  Serial.print("Initializing SD card...");
+
+  if (!SD.begin(4)) {
+    Serial.println("initialization failed!");
+    while (1);
+  }
+  Serial.println("initialization done.");
+
+  // open the file. note that only one file can be open at a time,
+  // so you have to close this one before opening another.
+  myFile = SD.open("azz.txt", FILE_WRITE);
 
   // check for the WiFi module:
   if (WiFi.status() == WL_NO_MODULE) {
@@ -78,7 +96,7 @@ void setup() {
   if (client.connect(server, 80)) {
     Serial.println("connected to server");
     // Make a HTTP request:
-    client.println("GET /index.php HTTP/1.1");
+    client.println("GET /sound.wav HTTP/1.1");
     client.println("Host: test.sander.borret.mtantwerp.eu");
     client.println("Connection: close");
     client.println();
@@ -91,16 +109,35 @@ void loop() {
   // from the server, read them and print them:
   while (client.available()) {
     char c = client.read();
-    result += c;
+
+    // if the file opened okay, write to it:
+    if (myFile) {
+      myFile.write(c);
+      Serial.write(c);
+    } else {
+      // if the file didn't open, print an error:
+      Serial.println("error opening test.txt");
+    }
+
+    /*
+    Wire.beginTransmission(8); // transmit to device #8
+    Wire.write(c);              // sends one byte
+    Wire.endTransmission();    // stop transmitting
+    */
+
+    // result += c;
     // Serial.write(c);
   }
 
-  Serial.println(result.substring(result.indexOf("<p>")+3, result.indexOf("</p>", result.indexOf("<p>")+3)));
+
+  // Serial.println(result.substring(result.indexOf("<p>")+3, result.indexOf("</p>", result.indexOf("<p>")+3)));
 
   // if the server's disconnected, stop the client:
   if (!client.connected()) {
     Serial.println();
     Serial.println("disconnecting from server.");
+    myFile.close();
+    Serial.println("done.");
     client.stop();
 
     // do nothing forevermore:
