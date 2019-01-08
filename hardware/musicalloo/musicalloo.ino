@@ -41,11 +41,10 @@ bool playingAudio2 = false;
 unsigned long previousMillis = 0;
 unsigned int seconds = 0;
 int musicLength;
-String fileNames[MAX_NR_OF_FILES];
-int fileCounter = 0;
 int currentMusicNr = 1;
 String currentPartAudio;
 String currentFullAudio;
+String fileNames[MAX_NR_OF_FILES];
 char currentPartAudioChar[MAX_FILE_NAME_LENGTH];
 char currentFullAudioChar[MAX_FILE_NAME_LENGTH];
 bool checkPart = false;
@@ -65,9 +64,9 @@ void setup() {
   
   Serial.print("Initializing SD card...");
 
-  if (!SD.begin(4)) {
+  if (!SD.begin(CS)) {
     Serial.println("Initialization failed");
-    while (1);
+    while (true);
   }
   Serial.println("Initialization done");
 
@@ -168,6 +167,8 @@ String split(String data, char separator, int index) {
 }
 
 void getFileNames(File dir) {
+  int fileIndex = 0;
+  
   while (true) {
     File entry =  dir.openNextFile();
     if (!entry) {
@@ -178,12 +179,11 @@ void getFileNames(File dir) {
       Serial.print(entry.name());
       Serial.print("\t\t");
       Serial.println(entry.size(), DEC);
-      fileNames[fileCounter] = entry.name();
+      fileNames[fileIndex] = entry.name();
+      fileIndex++;
     }
     
     entry.close();
-    
-    fileCounter++;
   }
 }
 
