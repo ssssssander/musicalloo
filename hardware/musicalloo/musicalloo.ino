@@ -26,6 +26,7 @@
 #define SAMPLING_RATE 16000 // Change according to the sampling rate, 16000 is best for playing via Arduino (used to determine audio length in seconds)
 #define MAX_NR_OF_FILES 6 // You can increase this number but be aware of the Arduino's memory
 #define MAX_FILE_NAME_LENGTH 12 // 8.3 filenames (12 chars)
+#define AUDIO_PER_SONG 2 // Part and full
 #define DELIMITER1 '-'
 #define DELIMITER2 '.'
 
@@ -49,6 +50,7 @@ char currentPartAudioChar[MAX_FILE_NAME_LENGTH];
 char currentFullAudioChar[MAX_FILE_NAME_LENGTH];
 bool checkPart = false;
 bool checkFull = false;
+int nrOfSongs = MAX_NR_OF_FILES / AUDIO_PER_SONG;
 
 void setup() {
   Serial.begin(9600);
@@ -136,6 +138,11 @@ void loop() {
   if (seconds >= musicLength) {
     seconds = 0;
     currentMusicNr++;
+
+    if (currentMusicNr > nrOfSongs) {
+      currentMusicNr = 1;
+    }
+    
     nextSong();
   }
   
