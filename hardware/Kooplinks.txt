@@ -1,0 +1,9 @@
+Adafruit
+https://www.adafruit.com/product/3942
+https://www.adafruit.com/product/3653
+https://www.adafruit.com/product/2746
+
+Opencircuit
+https://opencircuit.be/Product/10027/SD-kaart-module
+https://opencircuit.be/Product/10114/HC-05-Bluetooth-module-met-adapter
+https://opencircuit.be/Product/10037/HC-SR04-Ultrasonische-afstands-detectie-module?fbclid=IwAR2uyCA9ghuCbyp_Z3z94IyRP97HSXDKepBfx1lAMUGaoy6ZqWJPIg7EHAw
