@@ -279,13 +279,14 @@ section {
 
     .music-section {
         .content {
-            grid-row-start: 2;
+            grid-row-start: 1;
             grid-row-end: 5;
             grid-column-start: 2;
             grid-column-end: 12;
         }
 
         .image-wrapper {
+            display: none;
             grid-row-start: 3;
             grid-row-end: 4;
             grid-column-start: 6;
@@ -334,12 +335,18 @@ section {
 
     .contact-section {
         img {
-            display: none;
+            height: 70%;
+            grid-column-start: 1;
+            grid-column-end: 13;
+            grid-row-start: 3;
+            grid-row-end: 5;
+            justify-self: center;
+            align-self: center;
         }
 
         .content {
             grid-row-start: 1;
-            grid-row-end: 5;
+            grid-row-end: 3;
             grid-column-start: 2;
             grid-column-end: 12;
             justify-self: center;

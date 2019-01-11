@@ -19,13 +19,14 @@ form {
 
     input[type=submit] {
         cursor: pointer;
+
     }
 }
 
 .contact-section {
     img {
         height: 50%;
-        grid-column-start: 9;
+        grid-column-start: 8;
         grid-column-end: 12;
         grid-row-start: 1;
         grid-row-end: 5;
@@ -36,7 +37,7 @@ form {
     .content {
         grid-row-start: 2;
         grid-row-end: 4;
-        grid-column-start: 2;
+        grid-column-start: 3;
         grid-column-end: 8;
     }
 
@@ -64,6 +65,8 @@ form {
         border: 1px solid $blue;
         color:$blue;
         letter-spacing: 1px;
+        margin-right: 0;
+        margin-left: auto;
 
         font: {
           size: 16px;
